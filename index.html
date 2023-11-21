@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    .title-div {
+      font-weight: bold;
+      font-size: 50px;
+      margin-bottom:0px;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: lightblue;
+    }
+
+    .main-div {
+      background-color: lightblue;
+      text-align: center;
+      color: white;
+      font-size: 40px;
+      margin-top: 30px;
+      margin-left: 10px;
+      margin-right: 10px;
+      font-family: Arial;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .whale {
+      color: black;
+    }
+
+    .picture-div {
+      background-color: #e74c3c;
+      text-align: center;
+      color: white;
+      font-size: 40px;
+      margin-top: 10px;
+      margin-left: 10px;
+      margin-right: 10px;
+      font-family: Arial;
+      height: 90px; /* Adjusted height to be 2 times smaller */
+      border-radius: 15px; /* Adjusted border-radius accordingly */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo {
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 15px; /* Adjusted border-radius accordingly */
+    }
+
+    .button {
+      background-color: #3498db;
+      color: white;
+      font-weight: bold;
+      font-family: Arial;
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.15s, box-shadow 0.15s, opacity 0.15s;
+      opacity: 0.8;
+    }
+
+    .button:hover {
+      background-color: #2980b9;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      opacity: 1;
+    }
+
+    .button:active {
+      opacity: 0.5;
+    }
+
+    .ammount {
+      font-size: 18px;
+      color: black;
+      margin-top: 20px;
+    }
+
+    .input {
+      padding: 10px;
+      font-weight: bold;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      width: 200px;
+      box-sizing: border-box;
+    }
+
+    .input-div {
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main-div">
+    <div class="title-div">
+      <p>Loan <span class="whale">Whale</span></p>
+    </div>
+    <div class="picture-div">
+      <img class="logo" src="logo.jpeg" alt="logo">
+    </div>
+    <div>
+      <p class="ammount">
+        Enter the amount you want to loan:
+      </p>
+    </div>
+    <div class="input-div">
+      <input class="input" type="text" placeholder="Amount">
+    </div>
+    <div>
+      <button class="button">
+        Click to register
+      </button>
+    </div>
+  </div>
+</body>
+
+</html>
