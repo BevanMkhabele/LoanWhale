@@ -1,102 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document Upload Form</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow EA - Automated Trading Robots by MKFX</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Change the font family to Arial */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: url('background.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        .header {
+            height: 50px;
+            background-color: black;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .main-section {
+            padding: 40px;
+            text-align: center;
+            background: url('background.jpeg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .title {
+            color: #007bf;
+        }
+
+        .paragraph {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-decoration: none;
+            color: white;
+            background-color: #28a745;
+            border-radius: 5px;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Set list-style-type to none and add custom styling for the list items */
+        .feature-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        .feature-item {
+            margin-bottom: 10px;
+        }
+      .background-div{
+      width:1000px
+      }
+       .image{
+      width:100%;
+      height:80px;
+      }
+      .ea{
+      width:100%;
+     
+      }
+      
+    </style>
 </head>
-
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-
-  .container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  label {
-    margin-bottom: 8px;
-  }
-
-  input {
-    margin-bottom: 16px;
-    padding: 8px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  input[type="submit"] {
-    background-color: #3498db;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  input[type="submit"]:hover {
-    background-color: #2980b9;
-  }
-
-  .redirect-button {
-    background-color: #2ecc71;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 10px;
-  }
-
-  .redirect-button:hover {
-    background-color: #27ae60;
-  }
-</style>
-
 <body>
-  <div class="container">
-    <h2>Document Upload Form</h2>
 
-    <form id="uploadForm" action="upload.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
-      <label for="name">Name:</label>
-      <input type="text" name="name" id="name" required><br>
-
-      <label for="email">Email:</label>
-      <input type="email" name="email" id="email" required><br>
-
-      <label for="idPicture">ID Picture/Document:</label>
-      <input type="file" name="idPicture" id="idPicture" accept=".jpg, .jpeg, .png, .pdf" required><br>
-
-      <label for="bankStatement">3 Months Bank Statement:</label>
-      <input type="file" name="bankStatement" id="bankStatement" accept=".pdf" required><br>
-
-      <input type="submit" value="Submit">
-    </form>
-
-    <a href="form.html" class="redirect-button">Go to Form</a>
+<div class="header">
+    <h1 class="title">Shadow EA - Automated Trading Robot</h1>
+    <p class="paragraph">Your path to automated trading success with MKFX</p>
+</div>
+  <div class="background-div">
+    <img class="image" src="background.jpeg">
+  
   </div>
+    <div>
+    <img class="ea" src="ea.jpeg">
+    </div>
 
-  <script src="script.js"></script>
+<div class="main-section">
+    <h2 class="title">Explore the Power of Shadow EA</h2>
+    <p class="paragraph">Revolutionize your trading experience with our advanced automated trading robots. Shadow EA, crafted by MKFX, brings efficiency, precision, and profitability to your trading strategies.</p>
+    <a href="#features" class="cta-button">Discover Features</a>
+</div>
+
+<div id="features" class="main-section">
+    <h2 class="title">Key Features</h2>
+    <ul class="feature-list">
+        <li class="feature-item">Smart Trading Algorithms</li>
+        <li class="feature-item">Risk Management Tools</li>
+        <li class="feature-item">Real-time Market Analysis</li>
+        <li class="feature-item">User-Friendly Interface</li>
+        <li class="feature-item">Customizable Strategies</li>
+    </ul>
+</div>
+
+<div class="main-section">
+    <h2 class="title">Get Started Today</h2>
+    <p class="paragraph">Maximize your trading potential. Join the Shadow EA community today and unlock a new era of automated trading.</p>
+    <a href="#contact" class="cta-button">Contact Us</a>
+</div>
+
+<div class="footer">
+    <p>&copy; 2023 Shadow EA by MKFX. All rights reserved.</p>
+</div>
+
 </body>
-
 </html>
