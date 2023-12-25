@@ -1,121 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shadow EA - Automated Trading Robots by MKFX</title>
     <style>
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background: url('background.jpeg') no-repeat center center fixed;
-            background-size: cover;
-            color: white;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
-        .header {
-            height: 80px; /* Increased height for better visibility on smaller screens */
-            background-color: black;
-            color: white;
-            padding: 10px;
-            text-align: center;
+        .container {
+            display: flex; /* Change to flex */
+            width: 400px;
+            margin-bottom: 20px; /* Add margin for separation */
+            background-color: #e6e6e6; /* Background color for the first container */
+            padding: 20px; /* Padding for the first container */
         }
 
-        .main-section {
-            padding: 20px; /* Reduced padding for better space utilization */
-            text-align: center;
+        .box {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
         }
 
-        .title {
-            color: white;
+        .blue-box {
+            background-color: #3498db;
         }
 
-        .paragraph {
-            font-size: 16px; /* Reduced font size for better readability on smaller screens */
-            margin-bottom: 15px; /* Reduced margin for better space utilization */
-            padding-top:40px;
+        .container2 {
+            display: flex; /* Change to flex */
+            width: 400px;
+            margin-bottom: 20px; /* Add margin for separation */
+            background-color: #d9ead3; /* Background color for the second container */
+            padding: 20px; /* Padding for the second container */
         }
 
-        .cta-button {
-            display: inline-block;
-            padding: 10px 15px; /* Reduced padding for better space utilization */
-            font-size: 14px; /* Reduced font size for better space utilization */
-            text-decoration: none;
-            color: white;
-            background-color: #28a745;
-            border-radius: 5px;
-        }
-
-        .footer {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .feature-list {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            text-align: center;
-        }
-
-        .feature-item {
-            margin-bottom: 10px;
-        }
-
-        .background-div {
-            max-width: 100%; /* Ensure the image doesn't overflow its container */
-        }
-
-        .image {
-            width: 100%;
-            height: auto;
-            margin-top:60px;
-        }
-
-        .ea {
-            width: 100%;
-            max-width: 100%;
+        .green-box {
+            background-color: #2ecc71;
         }
     </style>
+    <title>Horizontal Flexbox Example</title>
 </head>
+
 <body>
+    <div class="container">
+        <!-- First div with blue boxes -->
+        <div class="box blue-box"></div>
+        <div class="box blue-box"></div>
+        <div class="box blue-box"></div>
+        <div class="box blue-box"></div>
+        <div class="box blue-box"></div>
+        <div class="box blue-box"></div>
+        <div class="box blue-box"></div>
+    </div>
 
-<div class="header">
-    <h1 class="title">Shadow EA - Automated Trading Robot</h1>
-    <p class="paragraph">Your path to automated trading success with MKFX</p>
-</div>
-
-
-<div class="main-section">
-    <h2 class="title">Explore the Power of Shadow EA</h2>
-    <p class="paragraph">Revolutionize your trading experience with our advanced automated trading robots. Shadow EA, crafted by MKFX, brings efficiency, precision, and profitability to your trading strategies.</p>
-    <a href="#features" class="cta-button">Discover Features</a>
-</div>
-
-<div id="features" class="main-section">
-    <h2 class="title">Key Features</h2>
-    <ul class="feature-list">
-        <li class="feature-item">Smart Trading Algorithms</li>
-        <li class="feature-item">Risk Management Tools</li>
-        <li class="feature-item">Real-time Market Analysis</li>
-        <li class="feature-item">User-Friendly Interface</li>
-        <li class="feature-item">Customizable Strategies</li>
-    </ul>
-</div>
-
-<div class="main-section">
-    <h2 class="title">Get Started Today</h2>
-    <p class="paragraph">Maximize your trading potential. Join the Shadow EA community today and unlock a new era of automated trading.</p>
-    <a href="#contact" class="cta-button">Contact Us</a>
-</div>
-
-<div class="footer">
-    <p>&copy; 2023 Shadow EA by MKFX. All rights reserved.</p>
-</div>
-
+    <div class="container2">
+        <!-- Second div with green boxes -->
+        <div class="box green-box"></div>
+        <div class="box green-box"></div>
+        <div class="box green-box"></div>
+        <div class="box green-box"></div>
+        <div class="box green-box"></div>
+        <div class="box green-box"></div>
+        <div class="box green-box"></div>
+    </div>
 </body>
+
 </html>
