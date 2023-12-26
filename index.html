@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animated Header</title>
+    <title>Own Your Mazza</title>
     <style>
         body {
             margin: 0;
@@ -15,7 +15,7 @@
             color: white;
             text-align: center;
             margin-top: 50px;
-            opacity: 0.5;
+            opacity: 0.7;
         }
 
         .animated-word {
@@ -24,7 +24,7 @@
             font-weight: bold; 
             white-space: nowrap;
             overflow: hidden;
-            border-right: 2px solid lightgrey; /* Set border color to light grey */
+            border-right: 2px solid lightgrey;
             display: inline-block;
         }
 
@@ -42,96 +42,70 @@
             animation-delay: var(--delay, 0s);
         }
 
-        .animated-word span:nth-child(1) {
-            --delay: 0.3s;
-        }
+        .animated-word span:nth-child(1) { --delay: 0.3s; }
+        .animated-word span:nth-child(2) { --delay: 0.6s; }
+        .animated-word span:nth-child(3) { --delay: 0.9s; }
+        .animated-word span:nth-child(4) { --delay: 1.2s; }
+        .animated-word span:nth-child(5) { --delay: 1.5s; }
+        .animated-word span:nth-child(6) { --delay: 1.8s; }
+        .animated-word span:nth-child(7) { --delay: 2.1s; }
+        .animated-word span:nth-child(8) { --delay: 2.4s; }
+        .animated-word span:nth-child(9) { --delay: 2.7s; }
+        .animated-word span:nth-child(10) { --delay: 3.0s; }
 
-        .animated-word span:nth-child(2) {
-            --delay: 0.6s;
-        }
-
-        .animated-word span:nth-child(3) {
-            --delay: 0.9s;
-        }
-
-        .animated-word span:nth-child(4) {
-            --delay: 1.2s;
-        }
-
-        .animated-word span:nth-child(5) {
-            --delay: 1.5s;
-        }
-
-        .animated-word span:nth-child(6) {
-            --delay: 1.8s;
-        }
-
-        .animated-word span:nth-child(7) {
-            --delay: 2.1s;
-        }
-
-        .animated-word span:nth-child(8) {
-            --delay: 2.4s;
-        }
-
-        .animated-word span:nth-child(9) {
-            --delay: 2.7s;
-        }
-
-        .animated-word span:nth-child(10) {
-            --delay: 3.0s;
-        }
-
-        /* Added style for the image */
         img {
             position: absolute;
             top: 10px;
             left: 10px;
-            width: 130px; /* Adjust the width as needed */
+            width: 130px;
             height: auto;
         }
 
-        /* Added style for the new div */
         .background-div {
-           
             width: 100%;
             background-color: #f5f5f5;
-            margin-top:40px;
-            text-align:center;
-            padding:px
-           
-            
+            margin-top: 40px;
+            text-align: center;
+            padding: 20px;
         }
-      .shop{
-      font-family:arial;
-      
-      
-      }
-      .link{
-      text-decoration:underline;
-      
-      }
-      .title{
-      text-align:center;
-      
-      }
-      .own{
-      font-size:40px;
-      font-family:arial;
-      }
-      .shop-button{
-      width:90px;
-      height:25px;
-      background-color:white;
-      border-width:thin;
-      border-radius:20px
-      }
-     
+
+        .shop {
+            font-family: Arial;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .link {
+            text-decoration: underline;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .title {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .own {
+            font-size: 40px;
+            font-family: Arial;
+            margin-bottom: 10px;
+        }
+
+        .shop-button {
+            width: 120px;
+            height: 35px;
+            background-color: white;
+            border: 2px solid #333;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-width:thin;
+        }
     </style>
 </head>
 <body>
-    
-    <img src="Mazza.png" alt="Mazza Logo"> <!-- Insert your actual image file path here -->
+    <img src="Mazza.png" alt="Mazza Logo">
     <header>
         <div class="animated-word">
             <span>M</span>
@@ -144,17 +118,15 @@
             <span>u</span>
             <span>g</span>
         </div>
-      
     </header>
-      
-      <div class="background-div">
-        <p class="shop">Shop All New Arrivals</p>
-        <p class="link">Shop</p>
-      </div>
-      <div class="title">
+    <div class="background-div">
+        <p class="shop">Explore the Latest</p>
+        <p class="link">Shop Now</p>
+    </div>
+    <div class="title">
         <h1 class="own">Own Your Mazza</h1>
-        <p>Step into confidence with trendsetting kicks and unbeatable style.</P>
-        <button class="shop-button">shop</button>
-      </div>
+        <p>Step into confidence with trendsetting kicks and unbeatable style.</p>
+        <button class="shop-button">Shop Now</button>
+    </div>
 </body>
 </html>
