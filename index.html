@@ -16,7 +16,7 @@
             text-align: center;
             margin-top: 45px;
             opacity: 0.7;
-            width: 100%; /* Set width to 100% */
+            width: 100%;
         }
 
         .animated-word {
@@ -68,8 +68,8 @@
             margin-top: 20px;
             text-align: center;
             padding: 20px;
-            padding-left:0px;
-            padding-right:0px;
+            padding-left: 0px;
+            padding-right: 0px;
         }
 
         .shop {
@@ -105,6 +105,32 @@
             cursor: pointer;
             border-width: thin;
         }
+
+        .card-scroller {
+            display: flex;
+            overflow-x: auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            white-space: nowrap;
+        }
+
+        .card {
+            flex: 0 0 auto;
+            width: 200px;
+            margin-right: 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card p {
+            margin: 0;
+        }
     </style>
 </head>
 <body>
@@ -131,5 +157,70 @@
         <p>Step into confidence with trendsetting kicks and unbeatable style.</p>
         <button class="shop-button">Shop Now</button>
     </div>
+    <div class="card-scroller">
+        <div class="card">
+            <p>Card 1</p>
+            <p>Card Content goes here</p>
+        </div>
+        <div class="card">
+            <p>Card 2</p>
+            <p>Card Content goes here</p>
+        </div>
+        <div class="card">
+            <p>Card 3</p>
+            <p>Card Content goes here</p>
+        </div>
+        <div class="card">
+            <p>Card 4</p>
+            <p>Card Content goes here</p>
+        </div>
+        <div class="card">
+            <p>Card 5</p>
+            <p>Card Content goes here</p>
+        </div>
+        <div class="card">
+            <p>Card 6</p>
+            <p>Card Content goes here</p>
+        </div>
+        <div class="card">
+            <p>Card 7</p>
+            <p>Card Content goes here</p>
+        </div>
+        <div class="card">
+            <p>Card 8</p>
+            <p>Card Content goes here</p>
+        </div>
+        <div class="card">
+            <p>Card 9</p>
+            <p>Card Content goes here</p>
+        </div>
+        <div class="card">
+            <p>Card 10</p>
+            <p>Card Content goes here</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cardScroller = document.querySelector('.card-scroller');
+            let isScrolling = false;
+
+            cardScroller.addEventListener('scroll', function() {
+                isScrolling = true;
+            });
+
+            setInterval(function() {
+                if (isScrolling) {
+                    isScrolling = false;
+                    const cards = document.querySelectorAll('.card');
+                    cards.forEach(function(card) {
+                        const rect = card.getBoundingClientRect();
+                        const isVisible = rect.left >= 0 && rect.right <= window.innerWidth;
+                        card.style.transform = isVisible ? 'translateX(0)' : 'translateX(-100%)';
+                    });
+                }
+            }, 100);
+        });
+    </script>
 </body>
 </html>
