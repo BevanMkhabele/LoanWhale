@@ -3,23 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Letter Animation</title>
+    <title>Animated Header</title>
     <style>
         body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
             margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: lightgrey;
+            color: white;
+           
+            text-align: center;
+            margin-top: 50px;
+            opacity: 0.5;
         }
 
         .animated-word {
+            font-family: monospace;
             font-size: 24px;
-            font-weight: bold;
+            font-weight: bold; 
             white-space: nowrap;
             overflow: hidden;
-            border-right: 2px solid #333;
-            animation: typing 6s steps(20, end), blinking-caret 0.5s steps(1, end) 6s infinite alternate;
+            border-right: 2px solid lightgrey; /* Set border color to light grey */
+            display: inline-block;
         }
 
         @keyframes typing {
@@ -28,14 +35,78 @@
             }
         }
 
-        @keyframes blinking-caret {
-            to {
-                border-right-color: transparent;
-            }
+        .animated-word span {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+            animation-delay: var(--delay, 0s);
+        }
+
+        .animated-word span:nth-child(1) {
+            --delay: 0.3s;
+        }
+
+        .animated-word span:nth-child(2) {
+            --delay: 0.6s;
+        }
+
+        .animated-word span:nth-child(3) {
+            --delay: 0.9s;
+        }
+
+        .animated-word span:nth-child(4) {
+            --delay: 1.2s;
+        }
+
+        .animated-word span:nth-child(5) {
+            --delay: 1.5s;
+        }
+
+        .animated-word span:nth-child(6) {
+            --delay: 1.8s;
+        }
+
+        .animated-word span:nth-child(7) {
+            --delay: 2.1s;
+        }
+
+        .animated-word span:nth-child(8) {
+            --delay: 2.4s;
+        }
+
+        .animated-word span:nth-child(9) {
+            --delay: 2.7s;
+        }
+
+        .animated-word span:nth-child(10) {
+            --delay: 3.0s;
+        }
+
+        /* Added style for the image */
+        img {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 130px; /* Adjust the width as needed */
+            height: auto;
         }
     </style>
 </head>
 <body>
-    <div class="animated-word">HelloWorld</div>
+    <img src="Mazza.png" alt="Mazza Logo"> <!-- Insert your actual image file path here -->
+    <header>
+        <div class="animated-word">
+            <span>M</span>
+            <span>a</span>
+            <span>z</span>
+            <span>z</span>
+            <span>a</span>
+            <span>P</span>
+            <span>l</span>
+            <span>u</span>
+            <span>g</span>
+        </div>
+    </header>
 </body>
 </html>
