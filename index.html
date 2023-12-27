@@ -24,7 +24,7 @@
         .animated-word {
             font-family: monospace;
             font-size: 24px;
-            font-weight: bold; 
+            font-weight: bold;
             white-space: nowrap;
             overflow: hidden;
             border-right: 2px solid lightgrey;
@@ -110,22 +110,23 @@
         }
 
         .card-scroller-container {
-            overflow-x: scroll;
+            overflow-y: scroll;
             white-space: nowrap;
             display: flex;
+            flex-direction: column;
             border-top: 1px solid #ccc;
             border-bottom: 1px solid #ccc;
             padding: 10px;
             box-sizing: border-box;
-            scroll-behavior: smooth; /* Enable smooth scrolling */
-            width: 330%; /* Ensure enough width to show 3 cards at a time */
+            scroll-behavior: smooth;
+            height: 400px; /* Set a fixed height for the scroller */
         }
 
         .card {
-            flex: 0 0 30%;
+            flex: 0 0 100%;
             width: 100%;
             height: 100px;
-            margin-right: 20px;
+            margin-bottom: 20px;
             background-color: white;
             border: 1px solid #ccc;
             border-radius: 8px;
@@ -137,7 +138,7 @@
         }
 
         .card:last-child {
-            margin-right: 0; /* Remove margin for the last card */
+            margin-bottom: 0; /* Remove margin for the last card */
         }
 
         .card p {
@@ -228,8 +229,8 @@
                     const cards = document.querySelectorAll('.card');
                     cards.forEach(function (card) {
                         const rect = card.getBoundingClientRect();
-                        const isVisible = rect.left >= 0 && rect.right <= window.innerWidth;
-                        card.style.transform = isVisible ? 'translateX(0)' : 'translateX(-100%)';
+                        const isVisible = rect.top >= 0 && rect.bottom <= cardScrollerContainer.clientHeight;
+                        card.style.transform = isVisible ? 'translateY(0)' : 'translateY(-100%)';
                     });
                 }
             }, 100);
