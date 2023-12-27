@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +24,7 @@
         .animated-word {
             font-family: monospace;
             font-size: 24px;
-            font-weight: bold;
+            font-weight: bold; 
             white-space: nowrap;
             overflow: hidden;
             border-right: 2px solid lightgrey;
@@ -46,45 +45,16 @@
             animation-delay: var(--delay, 0s);
         }
 
-        .animated-word span:nth-child(1) {
-            --delay: 0.3s;
-        }
-
-        .animated-word span:nth-child(2) {
-            --delay: 0.6s;
-        }
-
-        .animated-word span:nth-child(3) {
-            --delay: 0.9s;
-        }
-
-        .animated-word span:nth-child(4) {
-            --delay: 1.2s;
-        }
-
-        .animated-word span:nth-child(5) {
-            --delay: 1.5s;
-        }
-
-        .animated-word span:nth-child(6) {
-            --delay: 1.8s;
-        }
-
-        .animated-word span:nth-child(7) {
-            --delay: 2.1s;
-        }
-
-        .animated-word span:nth-child(8) {
-            --delay: 2.4s;
-        }
-
-        .animated-word span:nth-child(9) {
-            --delay: 2.7s;
-        }
-
-        .animated-word span:nth-child(10) {
-            --delay: 3.0s;
-        }
+        .animated-word span:nth-child(1) { --delay: 0.3s; }
+        .animated-word span:nth-child(2) { --delay: 0.6s; }
+        .animated-word span:nth-child(3) { --delay: 0.9s; }
+        .animated-word span:nth-child(4) { --delay: 1.2s; }
+        .animated-word span:nth-child(5) { --delay: 1.5s; }
+        .animated-word span:nth-child(6) { --delay: 1.8s; }
+        .animated-word span:nth-child(7) { --delay: 2.1s; }
+        .animated-word span:nth-child(8) { --delay: 2.4s; }
+        .animated-word span:nth-child(9) { --delay: 2.7s; }
+        .animated-word span:nth-child(10) { --delay: 3.0s; }
 
         img {
             position: absolute;
@@ -165,13 +135,16 @@
             box-sizing: border-box;
         }
 
+        .card:last-child {
+            margin-right: 0; /* Remove margin for the last card */
+        }
+
         .card p {
             margin: 0;
             text-align: center;
         }
     </style>
 </head>
-
 <body>
     <img src="Mazza.png" alt="Mazza Logo">
     <header>
@@ -242,17 +215,24 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const cardScrollerContainer = document.querySelector('.card-scroller-container');
+            let isScrolling = false;
 
             cardScrollerContainer.addEventListener('scroll', function () {
-                const cards = document.querySelectorAll('.card');
-                cards.forEach(function (card) {
-                    const rect = card.getBoundingClientRect();
-                    const isVisible = rect.left >= 0 && rect.right <= window.innerWidth;
-                    card.style.transform = isVisible ? 'translateX(0)' : 'translateX(-100%)';
-                });
+                isScrolling = true;
             });
+
+            setInterval(function () {
+                if (isScrolling) {
+                    isScrolling = false;
+                    const cards = document.querySelectorAll('.card');
+                    cards.forEach(function (card) {
+                        const rect = card.getBoundingClientRect();
+                        const isVisible = rect.left >= 0 && rect.right <= window.innerWidth;
+                        card.style.transform = isVisible ? 'translateX(0)' : 'translateX(-100%)';
+                    });
+                }
+            }, 100);
         });
     </script>
 </body>
-
 </html>
