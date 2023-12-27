@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,7 @@
             margin: 0;
             font-family: Arial, sans-serif;
             padding: 10px;
-            padding-bottom:900px
+            padding-bottom: 900px;
         }
 
         header {
@@ -24,7 +25,7 @@
         .animated-word {
             font-family: monospace;
             font-size: 24px;
-            font-weight: bold; 
+            font-weight: bold;
             white-space: nowrap;
             overflow: hidden;
             border-right: 2px solid lightgrey;
@@ -45,16 +46,45 @@
             animation-delay: var(--delay, 0s);
         }
 
-        .animated-word span:nth-child(1) { --delay: 0.3s; }
-        .animated-word span:nth-child(2) { --delay: 0.6s; }
-        .animated-word span:nth-child(3) { --delay: 0.9s; }
-        .animated-word span:nth-child(4) { --delay: 1.2s; }
-        .animated-word span:nth-child(5) { --delay: 1.5s; }
-        .animated-word span:nth-child(6) { --delay: 1.8s; }
-        .animated-word span:nth-child(7) { --delay: 2.1s; }
-        .animated-word span:nth-child(8) { --delay: 2.4s; }
-        .animated-word span:nth-child(9) { --delay: 2.7s; }
-        .animated-word span:nth-child(10) { --delay: 3.0s; }
+        .animated-word span:nth-child(1) {
+            --delay: 0.3s;
+        }
+
+        .animated-word span:nth-child(2) {
+            --delay: 0.6s;
+        }
+
+        .animated-word span:nth-child(3) {
+            --delay: 0.9s;
+        }
+
+        .animated-word span:nth-child(4) {
+            --delay: 1.2s;
+        }
+
+        .animated-word span:nth-child(5) {
+            --delay: 1.5s;
+        }
+
+        .animated-word span:nth-child(6) {
+            --delay: 1.8s;
+        }
+
+        .animated-word span:nth-child(7) {
+            --delay: 2.1s;
+        }
+
+        .animated-word span:nth-child(8) {
+            --delay: 2.4s;
+        }
+
+        .animated-word span:nth-child(9) {
+            --delay: 2.7s;
+        }
+
+        .animated-word span:nth-child(10) {
+            --delay: 3.0s;
+        }
 
         img {
             position: absolute;
@@ -106,22 +136,24 @@
             font-size: 16px;
             cursor: pointer;
             border-width: thin;
-            margin-bottom:40px
+            margin-bottom: 40px;
         }
 
         .card-scroller-container {
-            overflow-x: auto;
+            overflow-x: scroll;
             white-space: nowrap;
             display: flex;
-            scroll-snap-type: x mandatory;
-            border-top: 1px solid #ccc; /* Added border to separate visually */
-            border-bottom: 1px solid #ccc; /* Added border to separate visually */
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            padding: 10px;
+            box-sizing: border-box;
+            scroll-behavior: smooth; /* Enable smooth scrolling */
         }
 
         .card {
-            flex: 0 0 30%; /* Each card fills 30% of the container */
+            flex: 0 0 30%;
             width: 100%;
-            height:100px;
+            height: 100px;
             margin-right: 20px;
             background-color: white;
             border: 1px solid #ccc;
@@ -130,6 +162,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             scroll-snap-align: start;
             transition: transform 0.3s ease-in-out;
+            box-sizing: border-box;
         }
 
         .card p {
@@ -138,6 +171,7 @@
         }
     </style>
 </head>
+
 <body>
     <img src="Mazza.png" alt="Mazza Logo">
     <header>
@@ -208,24 +242,17 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const cardScrollerContainer = document.querySelector('.card-scroller-container');
-            let isScrolling = false;
 
             cardScrollerContainer.addEventListener('scroll', function () {
-                isScrolling = true;
+                const cards = document.querySelectorAll('.card');
+                cards.forEach(function (card) {
+                    const rect = card.getBoundingClientRect();
+                    const isVisible = rect.left >= 0 && rect.right <= window.innerWidth;
+                    card.style.transform = isVisible ? 'translateX(0)' : 'translateX(-100%)';
+                });
             });
-
-            setInterval(function () {
-                if (isScrolling) {
-                    isScrolling = false;
-                    const cards = document.querySelectorAll('.card');
-                    cards.forEach(function (card) {
-                        const rect = card.getBoundingClientRect();
-                        const isVisible = rect.left >= 0 && rect.right <= window.innerWidth;
-                        card.style.transform = isVisible ? 'translateX(0)' : 'translateX(-100%)';
-                    });
-                }
-            }, 100);
         });
     </script>
 </body>
+
 </html>
