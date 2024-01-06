@@ -43,7 +43,14 @@
             margin: 20px auto;
             width: 80%;
             max-width: 600px;
-            height: 300px; /* Adjust map height as needed */
+            height: 300px; /* Adjust image height as needed */
+        }
+
+        #map-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure the image covers the container */
+            border-radius: 10px; /* Optional: Add border-radius for a rounded appearance */
         }
     </style>
 </head>
@@ -54,16 +61,18 @@
         <input type="text" id="search-bar1" class="search-bar" placeholder="Where to?">
         <input type="text" id="search-bar2" class="search-bar" placeholder="From Where?">
 
-        <!-- Get Quote Button -->
-        <button id="get-quote-btn">Get Quote</button>
+        
 
-        <!-- Map Container -->
-        <div id="map-container"></div>
+        <!-- Image Container -->
+        <div id="map-container">
+            <img id="map-image" src="map.png" alt="Map Image">
+              <button id="get-quote-btn">Get Quote</button>
+        </div>
     </header>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Initialize the map with the selected routes
+            // Initialize the image with the selected routes
             var mapContainer = document.getElementById("map-container");
             var getQuoteButton = document.getElementById("get-quote-btn");
 
@@ -72,20 +81,20 @@
                 var route1 = document.getElementById("search-bar1").value;
                 var route2 = document.getElementById("search-bar2").value;
 
-                // Display the map with the selected routes
-                displayMap(mapContainer, route1, route2);
+                // Display the image with the selected routes
+                displayImage(mapContainer, route1, route2);
             });
 
-            function displayMap(container, origin, destination) {
-                // Use the Google Maps Embed API to display the map
-                var mapUrl = `https://www.google.com/maps/embed/v1/directions?key=YOUR_API_KEY&origin=${encodeURIComponent(origin)}&destination=${encodeURIComponent(destination)}`;
-                var iframe = document.createElement("iframe");
-                iframe.setAttribute("src", mapUrl);
-                iframe.setAttribute("width", "100%");
-                iframe.setAttribute("height", "100%");
-                iframe.setAttribute("frameborder", "0");
-                container.innerHTML = ""; // Clear previous content
-                container.appendChild(iframe);
+            function displayImage(container, origin, destination) {
+                // Use a placeholder image (map.png) or replace it with your actual image
+                var imageUrl = "map.png";
+                var image = document.createElement("img");
+                image.setAttribute("src", imageUrl);
+                image.setAttribute("alt", "Map Image");
+
+                // Clear previous content and append the new image
+                container.innerHTML = "";
+                container.appendChild(image);
             }
         });
     </script>
