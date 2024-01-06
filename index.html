@@ -1,378 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Image Page</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
 
+        img {
+            max-width: 40%;
+            max-height: 100%;
+            display: block;
+            margin-bottom: 20px;
+        }
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+        #loading-bar {
+            max-width: 0;
+            height: 10px;
+            background-color: #ccc; /* Light grey background color */
+            transition: width 3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
 
+    <img src="Kweek.png" alt="Kweek Image">
+    <div id="loading-bar"></div>
 
-<script type="text/javascript">
-   
-var msg_box ="Right-mouse click has been disabled.";
+    <script>
+        // JavaScript to simulate loading
+        document.addEventListener("DOMContentLoaded", function() {
+            var loadingBar = document.getElementById("loading-bar");
 
-function dis_rightclickIE(){
-	if (navigator.appName == 'Microsoft Internet Explorer' && (event.button == 2 || event.button == 3))
-		alert(msg_box)
-}
+            // Set the loading bar width to 100% after 3 seconds
+            setTimeout(function() {
+                loadingBar.style.width = "100%";
+            }, 3000);
+        });
+    </script>
 
-function dis_rightclickNS(e){
-	if ((document.layers||document.getElementById&&!document.all) && (e.which==2||e.which==3))
-	{
-	alert(msg_box)
-	return false;
-	}
-}
-
-if (document.layers){
-document.captureEvents(Event.MOUSEDOWN);
-document.onmousedown=dis_rightclickNS;
-}
-else if (document.all&&!document.getElementById){
-document.onmousedown=dis_rightclickIE;
-}
-document.oncontextmenu=new Function("alert(msg_box);return false")
-
-  
-                  function onKeyDown() 
-                    {
-                      // current pressed key
-                      var pressedKey = String.fromCharCode(event.keyCode).toLowerCase();
-
-                      if (event.ctrlKey && pressedKey == "c") 
-                      {
-                        // disable key press porcessing
-                        event.returnValue = false;
-                        alert("The copy function has been disabled");
-                      }
-                      }
-    
-    
-    
-            function doFocus()
-             {
-
-             }
-
-             function LoadUrl(arugment) {
-              //setup the command details
-               var Command = arugment;
-                var context = new Object();
-                context.CommandName = "LoadStudentFile";// doesn't matter
-               WebForm_DoCallback('__Page',Command,CallBackHandler,context,null,false)
-             
-             }
-
-             function CallBackHandler(result, context)
-             {
-               if (result == "None")
-                {
-                 alert("No letter has been issued for the selected qualification."); 
-                }
-                else
-                {
-                  window.location.href = "TelephoneVerification.aspx";
-                }
-
-                return false;
-             }
-
-</script>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1"><link rel="SHORTCUT ICON" href="images/favicon.ico" /><title>
-	University of Johannesburg - Student Portal
-</title>
-    <!--<meta name="description" content="The student portal is your access to point to information relating to your studies at the Univeristy of Johannesburg" /><meta name="keywords" content="UJ Student Portal, RAU student Portal, UJ, RAU, Univeristy of Johannesburg, Randse Afrikaanse Univeristeit" />-->
-    </head>
-<body style="font-size: 12pt; margin-left: 0; margin-top: 0; margin-right: 0; background-color: #aeaeae"
-    onload="doFocus();" onkeydown="onKeyDown();">
-    <form method="post" action="./ApplicationStatus.aspx" id="form1">
-<div class="aspNetHidden">
-<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
-<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTEwMTg2NTg0MjZkZHRcTSo9R3wxrszFM1Koan2PkEvyfqpi7clsjQ7kwLDw" />
-</div>
-
-<script type="text/javascript">
-//<![CDATA[
-var theForm = document.forms['form1'];
-if (!theForm) {
-    theForm = document.form1;
-}
-function __doPostBack(eventTarget, eventArgument) {
-    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
-        theForm.__EVENTTARGET.value = eventTarget;
-        theForm.__EVENTARGUMENT.value = eventArgument;
-        theForm.submit();
-    }
-}
-//]]>
-</script>
-
-
-<script src="/WebResource.axd?d=Z4cxlbQ9J-MUvfPP1DI9yLXMGFXfOKfJNp82K3nmf4YQ4yhn83RTvPgLfdBzUuGysMbhCqAcJnw9TspH_Vbf3K3ZHf2pZEYbsPTSGfWOp6o1&amp;t=638344140336178820" type="text/javascript"></script>
-
-<div class="aspNetHidden">
-
-	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="3CFDDA1E" />
-</div>
-        <div>
-            <table cellspacing="0" cellpadding="0" width="100%" style="font-family: Arial;">
-                <tr>
-                    <td colspan="1" style="background-image: url(bgimages/header_top.jpg); height: 24px;
-                        text-align: right; width: 5%;">
-                        </td>
-                    <td colspan="1" style="background-image: url(bgimages/header_top.jpg); height: 24px;
-                        text-align: left">
-                        <span style="font-family: Arial Baltic"><strong></strong></span></td>
-                    <td colspan="1" style="background-image: url(bgimages/header_top.jpg); height: 24px;
-                        text-align: right">
-                        <img src="bgimages/UJ_header_Logo.jpg" alt="University of Johannesburg" /></td>
-                    <td style="background-image: url(bgimages/header_top.jpg); height: 24px; text-align: right;
-                        width: 10%;">
-                        &nbsp;</td>
-                </tr>
-                <tr>
-                    <td colspan="1" style="background-image: url(bgimages/header_orange_grey_split.jpg);
-                        height: 12px">
-                    </td>
-                    <td colspan="3" style="background-image: url(bgimages/header_orange_grey_split.jpg);
-                        height: 12px;">
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="background-color: #3d3d3d; text-align: left">
-                        &nbsp;
-                    </td>
-                    <td colspan="2" style="background-color: #3d3d3d; text-align: right">
-                        &nbsp;</td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="background-image: url(bgimages/header_bottom.jpg); height: 15px;">
-                    </td>
-                    <td colspan="2" style="background-image: url(bgimages/header_bottom.jpg); height: 15px">
-                    </td>
-                </tr>
-            </table>
-            <!-- <div style="background-color: white;">-->
-            <!--#b1b1b1-->
-            <table width='90%' border='0' align="center">
-                <tr>
-                    <td align="center">
-                        <table width="100%">
-                            <tr>
-                                <td align="right">
-                                    &nbsp;</td>
-                            </tr>
-                        </table>
-                        <table width="100%" cellspacing="0" cellpadding="0" border="0" style="font-family: Arial;">
-                            <tr>
-                                <td style="background-image: url(bgimages/body_left_top_corner.jpg); height: 16px;
-                                    width: 12px">
-                                </td>
-                                <td colspan="2" style="background-image: url(bgimages/body_top.jpg); height: 16px;
-                                    text-align: left;">
-                                </td>
-                                <td style="background-image: url(bgimages/body_top_right_corner.jpg); height: 16px;
-                                    width: 13px">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="background-image: url(bgimages/body_left.jpg); height: 12px; width: 12px;">
-                                </td>
-                                <td colspan="2" rowspan="3" style="background-color: #3d3d3d; text-align: left;">
-                                    <span style="font-size: 16pt; color: #ffffff;">Welcome to the Student Portal</span></td>
-                                <td style="background-image: url(bgimages/body_right.jpg); height: 12px; width: 13px;">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="background-image: url(bgimages/body_left.jpg); height: 12px; width: 12px;">
-                                </td>
-                                <td style="background-image: url(bgimages/body_right.jpg); height: 12px; width: 13px">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="background-image: url(bgimages/body_left.jpg); height: 12px; width: 12px;">
-                                </td>
-                                <td style="background-image: url(bgimages/body_right.jpg); height: 12px; width: 13px">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="background-image: url(bgimages/body_left_gray.jpg); width: 12px;">
-                                </td>
-                                <td style="text-align: left; background-color: #939393; vertical-align: top;" width='20%'><br /> 
-                                    <span style="font-size: 16pt; color: #ffffff;"><a style="font-size: 16pt; color: #3d3d3d; text-decoration:none" href="TelephoneVerification.aspx?n=y">Check your admission status + all relevant communication</a></span>
-                                </td>
-                                <td style="background-color: White; color: #000000;">
-                                    <table width="100%">
-                                        <tr>
-                                            <td width='60%' valign="top">
-                                                <table width="100%" border="0" cellpadding="0" cellspacing="0">
-                                                    <tr>
-                                                        <td style="background-image: url(bgimages/content_top_left.jpg); height: 53px; width: 9px">
-                                                        </td>
-                                                        <td style="background-image: url(bgimages/content_top_center.jpg); height: 53px;" 
-                                                            align="left">
-                                                            <b>Application Status</b></td>
-                                                        <td style="background-image: url(bgimages/content_top_right.jpg); height: 53px; width: 9px">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="background-image: url(bgimages/content_left.jpg); width: 9px">
-                                                        </td>
-                                                        <td align="left"><br />
-                                                           <!-- <marquee id="ScrollingBanner" behavior=""><font face="Verdana" size="2pt">NOTE :  Error on 2010 Admin Year Planner for students – first recess starts 2 April 2010 and NOT 29 March 2010.</font></marquee>-->
-                                                            
-                                                           
-                                                          <table>
-  <tr>
-    <td>
-          Below is a list of the courses for which you have applied.
-        </td>
-  </tr>
-</table>
-<table border="1" width="95%" CELLSPACING="0" CELLPADDING="3" BORDER="1" style="font-size: 9pt;">
-  <tr bgcolor="silver">
-    <th>Student Number</th>
-    <th>Academic Year</th>
-    <th>Qualification</th>
-    <th>Status Description</th>
-  </tr>
-  <tr>
-    <td valign="top">224171029</td>
-    <td valign="top">2024</td>
-    <td valign="top">Bachelor of Commerce in Accounting</td>
-    <td>
-      <strong>958.UPGRADING GRADE 12</strong>
-      <font color="Black">
-        <ul>
-        </ul>
-      </font>
-    </td>
-  </tr>
-  <tr>
-    <td valign="top">224171029</td>
-    <td valign="top">2024</td>
-    <td valign="top">Diploma in Accountancy</td>
-    <td>
-      <strong>958.UPGRADING GRADE 12</strong>
-      <font color="Black">
-        <ul>
-        </ul>
-      </font>
-    </td>
-  </tr>
-</table>
-<table>
-  <tr>
-    <td>
-      <br>
-      <br>
-    </td>
-  </tr>
-</table>
-
-                                                             <table>
-  <tr>
-    <td>
-    </td>
-  </tr>
-</table>
-<table border="1" width="95%" CELLSPACING="0" CELLPADDING="3" BORDER="1" style="font-size: 9pt;">
-  <tr bgcolor="silver">
-    <th>Status Description</th>
-    <th>Correspondence</th>
-  </tr>
-  <tr>
-    <td>University of Johannesburg Application Received Letter</td>
-    <td align="center">
-      <a href="#" onclick="LoadUrl('112316894')" runat="server">View</a>
-    </td>
-  </tr>
-  <tr>
-    <td>Univ. Of Johannesburg - Upgrading Grade 12 Information</td>
-    <td align="center">
-      <a href="#" onclick="LoadUrl('112357552')" runat="server">View</a>
-    </td>
-  </tr>
-  <tr>
-    <td>University of Johannesburg Application Received Letter</td>
-    <td align="center">
-      <a href="#" onclick="LoadUrl('114740582')" runat="server">View</a>
-    </td>
-  </tr>
-  <tr>
-    <td>Univ. Of Johannesburg - Upgrading Grade 12 Information</td>
-    <td align="center">
-      <a href="#" onclick="LoadUrl('114789861')" runat="server">View</a>
-    </td>
-  </tr>
-</table>
-<table>
-  <tr>
-    <td>
-      <br>
-      <br>
-          Please contact the University (011 559 4555) should you require further
-          assistance.
-        </td>
-  </tr>
-</table>
-                                                            
-                                                            <br />
-                                    <span id="lblInfo" style="color:Red;font-family:Arial;font-weight:bold;"></span><br />
-                                                                                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                            
-                                                            <br />
-                                                            
-                                                           
-                                                           </td>
-                                                        <td style="background-image: url(bgimages/content_right.jpg); width: 9px">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="background-image: url(bgimages/content_bottom_left.jpg); height: 7px;
-                                                            width: 9px">
-                                                        </td>
-                                                        <td style="background-image: url(bgimages/content_bottom_center.jpg); height: 7px;">
-                                                        </td>
-                                                        <td style="background-image: url(bgimages/content_bottom_right.jpg); height: 7px;
-                                                            width: 9px">
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                                <td style="background-image: url(bgimages/body_right.jpg); height: 12px; width: 13px;
-                                    color: #000000;">
-                                </td>
-                            </tr>
-                            <tr style="color: #000000">
-                                <td style="background-image: url(bgimages/footer_left.jpg); height: 35px; width: 12px">
-                                </td>
-                                <td colspan="2" style="background-image: url(bgimages/footer_center.jpg); height: 35px;">
-                                 <p class="MsoNormal" style="margin: 0in 0in 0pt">
-                        <span style="font-family: Verdana"><span style="font-size: 7pt"><span style="color: white">
-                            Copyright © 2008 - University of Johannesburg</span></span></span></p>
-                    
-                                </td>
-                                <td style="background-image: url(bgimages/footer_right.jpg); height: 35px; width: 13px">
-                                </td>
-                            </tr>
-                        </table>
-                        <a href="UJterms.htm" style="text-decoration: none" target="_blank"><span style="color: white;
-                        font-family: Verdana; font-size: 7pt">Terms and Conditions</span></a>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    
-
-<script type="text/javascript">
-//<![CDATA[
-
-var callBackFrameUrl='/WebResource.axd?d=0-Bl3sh33yruWpprJGZcseDTsP0t1fI324Qp_IptRNRIvAtrYIMvThXg-G8l1tqiMFNVkuJ1pqLZGszHxjQPwZy4QQTAuzU_y9NxgDd8bSA1&t=638344140336178820';
-WebForm_InitCallback();//]]>
-</script>
-</form>
 </body>
 </html>
