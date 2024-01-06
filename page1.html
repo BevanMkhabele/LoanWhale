@@ -61,12 +61,10 @@
         <input type="text" id="search-bar1" class="search-bar" placeholder="Where to?">
         <input type="text" id="search-bar2" class="search-bar" placeholder="From Where?">
 
-        
-
         <!-- Image Container -->
         <div id="map-container">
             <img id="map-image" src="map.png" alt="Map Image">
-              <button id="get-quote-btn">Get Quote</button>
+            <button id="get-quote-btn">Get Quote</button>
         </div>
     </header>
 
@@ -92,8 +90,7 @@
                 image.setAttribute("src", imageUrl);
                 image.setAttribute("alt", "Map Image");
 
-                // Clear previous content and append the new image
-                container.innerHTML = "";
+                // Append the new image to the container
                 container.appendChild(image);
             }
         });
