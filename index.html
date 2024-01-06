@@ -22,7 +22,7 @@
         }
 
         #loading-bar {
-            max-width: 0;
+            width: 0;
             height: 10px;
             background-color: #ccc; /* Light grey background color */
             transition: width 3s ease-in-out;
@@ -35,7 +35,7 @@
     <div id="loading-bar"></div>
 
     <script>
-        // JavaScript to simulate loading
+        // JavaScript to simulate loading and redirect after 4 seconds
         document.addEventListener("DOMContentLoaded", function() {
             var loadingBar = document.getElementById("loading-bar");
 
@@ -43,6 +43,11 @@
             setTimeout(function() {
                 loadingBar.style.width = "100%";
             }, 3000);
+
+            // Redirect to "page1.html" after 4 seconds
+            setTimeout(function() {
+                window.location.href = "page1.html";
+            }, 4000);
         });
     </script>
 
