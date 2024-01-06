@@ -76,7 +76,7 @@
 
         #profile-section {
             display: flex;
-            align-items: center;
+            align-items: flex-start; /* Vertically align to the top */
             margin-bottom: 20px;
         }
 
@@ -87,7 +87,9 @@
         }
 
         #profile-info {
-            flex-grow: 1; /* Allow the text to grow and fill the available space */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align content to the start */
         }
 
         #profile-info h3 {
@@ -97,7 +99,11 @@
 
         #profile-info p {
             margin: 0;
-            font-size: 14px;
+            font-size: 16px;
+        }
+
+        #profile-info strong {
+            font-size: 48px; /* Three times the original size */
         }
 
         .close {
