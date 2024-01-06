@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .search-bar {
+            position: relative;
+            width: 80%;
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 15px;
+            border: thin solid #ccc; /* Add border style */
+        }
+
+        #get-quote-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .suggestions-list {
+            position: absolute;
+            top: 100%; /* Position below the search bar */
+            left: 0;
+            width: 100%;
+            max-height: 150px; /* Adjust as needed */
+            overflow-y: auto;
+            background-color: #fff;
+            border: thin solid #ccc;
+            border-top: none; /* Hide top border initially */
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: none; /* Hide initially */
+        }
+
+        .suggestion-item {
+            padding: 10px;
+            cursor: pointer;
+            border-bottom: thin solid #ccc;
+        }
+
+        .suggestion-item:last-child {
+            border-bottom: none; /* Remove border for the last item */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <!-- Search Bars with Unique IDs -->
+        <input type="text" id="search-bar1" class="search-bar" placeholder="Where to?">
+        <div class="suggestions-list" id="suggestions-list1"></div>
+
+        <input type="text" id="search-bar2" class="search-bar" placeholder="From Where?">
+        <div class="suggestions-list" id="suggestions-list2"></div>
+
+        <!-- Get Quote Button -->
+        <button id="get-quote-btn">Get Quote</button>
+    </header>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            function handleSuggestions(searchBar, suggestionsList) {
+                searchBar.addEventListener("input", function() {
+                    // Simulate fetching suggestions (replace this with your logic)
+                    var allSuggestions = ["Suggestion 1", "Suggestion 2", "Suggestion 3", "Suggestion 4", "Suggestion 5"];
+                    var input = searchBar.value.toLowerCase();
+
+                    // Filter suggestions based on user input
+                    var filteredSuggestions = allSuggestions.filter(function(suggestion) {
+                        return suggestion.toLowerCase().includes(input);
+                    });
+
+                    // Clear previous suggestions
+                    suggestionsList.innerHTML = "";
+
+                    // Display filtered suggestions
+                    filteredSuggestions.forEach(function(suggestion) {
+                        var suggestionItem = document.createElement("div");
+                        suggestionItem.className = "suggestion-item";
+                        suggestionItem.textContent = suggestion;
+
+                        suggestionItem.addEventListener("click", function() {
+                            // Set the selected suggestion in the search bar
+                            searchBar.value = suggestion;
+                            // Hide the suggestions list
+                            suggestionsList.style.display = "none";
+                        });
+
+                        suggestionsList.appendChild(suggestionItem);
+                    });
+
+                    // Show or hide suggestions list based on the input value
+                    suggestionsList.style.display = filteredSuggestions.length > 0 ? "block" : "none";
+                });
+            }
+
+            var searchBar1 = document.getElementById("search-bar1");
+            var suggestionsList1 = document.getElementById("suggestions-list1");
+            handleSuggestions(searchBar1, suggestionsList1);
+
+            var searchBar2 = document.getElementById("search-bar2");
+            var suggestionsList2 = document.getElementById("suggestions-list2");
+            handleSuggestions(searchBar2, suggestionsList2);
+        });
+    </script>
+
+</body>
+</html>
