@@ -68,33 +68,5 @@
         </div>
     </header>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Initialize the image with the selected routes
-            var mapContainer = document.getElementById("map-container");
-            var getQuoteButton = document.getElementById("get-quote-btn");
-
-            getQuoteButton.addEventListener("click", function() {
-                // Get the selected routes from the search bars
-                var route1 = document.getElementById("search-bar1").value;
-                var route2 = document.getElementById("search-bar2").value;
-
-                // Display the image with the selected routes
-                displayImage(mapContainer, route1, route2);
-            });
-
-            function displayImage(container, origin, destination) {
-                // Use a placeholder image (map.png) or replace it with your actual image
-                var imageUrl = "map.png";
-                var image = document.createElement("img");
-                image.setAttribute("src", imageUrl);
-                image.setAttribute("alt", "Map Image");
-
-                // Append the new image to the container
-                container.appendChild(image);
-            }
-        });
-    </script>
-
 </body>
 </html>
