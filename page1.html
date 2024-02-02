@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page 1</title>
+    <title>Sticky Header</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,163 +11,90 @@
             padding: 0;
         }
 
-        header {
-            padding: 10px;
+        #container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
             text-align: center;
         }
 
-        .search-bar {
-            position: relative;
-            width: 80%;
-            max-width: 400px;
-            margin: 20px auto;
-            padding: 10px;
-            font-size: 16px;
-            border-radius: 15px;
-            border: thin solid #ccc; /* Add border style */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: #c0c0c0; /* Silver background color */
+            color: #000000; /* Shiny black text color */
+            padding: 10px 20px;
+            text-align: center;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        #get-quote-btn {
-            display: block;
-            margin: 20px auto;
-            padding: 15px 30px;
-            font-size: 18px;
-            background-color: #000;
-            color: #fff;
+        h1 {
+            margin: 0;
+            font-size: 1.5em;
+            flex-grow: 1; /* Allow the name to grow and center align */
+        }
+
+        h1 span {
+            font-size: 2em; /* Set the font size to be 2 times */
+        }
+
+        p {
+            color: #666;
+            font-size: 0.8em; /* Smaller font size for the additional text */
+        }
+
+        /* Style for the search icon button */
+        #search-icon {
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #000000; /* Shiny black color */
+        }
+
+        /* Style for the search bar */
+        #search-bar {
+            width: 80%;
+            margin: 0 auto;
+            padding: 10px;
+            font-size: 1em;
             border: none;
             border-radius: 5px;
-            cursor: pointer;
-        }
-
-        #map-container {
-            margin: 20px auto;
-            width: 80%;
-            max-width: 600px;
-            height: 300px; /* Adjust image height as needed */
-        }
-
-        #map-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Ensure the image covers the container */
-            border-radius: 10px; /* Optional: Add border-radius for a rounded appearance */
-        }
-
-        /* Style for the popup page */
-        #popup-page {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 0;
-            background-color: #fff; /* Solid white background */
-            border-top: 2px solid #ccc; /* Light grey top border */
-            border-top-left-radius: 8px; /* Border radius for the top left corner */
-            border-top-right-radius: 18px; /* Border radius for the top right corner */
-            overflow: hidden;
-            transition: height 0.5s ease-in-out;
-        }
-
-        #popup-content {
-            padding: 20px;
-            height: 100%;
-            overflow-y: auto;
-        }
-
-        #profile-section {
-            display: flex;
-            align-items: flex-start; /* Vertically align to the top */
-            margin-bottom: 20px;
-        }
-
-        #profile-picture {
-            width: 120px;
-            height: auto; /* Maintain the aspect ratio */
-            margin-right: 20px;
-        }
-
-        #profile-info {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start; /* Align content to the start */
-        }
-
-        #profile-info h3 {
-            margin: 0;
-            font-size: 16px;
-        }
-
-        #profile-info p {
-            margin: 0;
-            font-size: 16px;
-        }
-
-        #profile-info strong {
-            font-size: 48px; /* Three times the original size */
-        }
-
-        .close {
-            text-align: center;
+            outline: none;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <!-- Search Bars with Unique IDs -->
-        <input type="text" id="search-bar1" class="search-bar" placeholder="Where to?">
-        <input type="text" id="search-bar2" class="search-bar" placeholder="From Where?">
-
-        <!-- Image Container -->
-        <div id="map-container">
-            <img id="map-image" src="map.png" alt="Map Image">
-            <button id="get-quote-btn">Get Quote</button>
-        </div>
+        <span id="search-icon" onclick="openSearchBar()">&#128269;</span>
+        <h1>AutoBid<span>X</span>change</h1>
     </header>
 
-    <!-- Popup Page Container -->
-    <div id="popup-page">
-        <div id="popup-content">
-            <!-- Popup Content Goes Here -->
-            <div class="close">
-                <button>close</button>
-            </div>
-            <!-- Profile Section -->
-            <div id="profile-section">
-                <img id="profile-picture" src="classic.png" alt="Profile Picture">
-                <div id="profile-info">
-                    <h3>Classic Ride</h3>
-                    <p><strong>R36</strong></p>
-                </div>
-            </div>
-        </div>
+    <div id="container">
+        <p>Content goes here...</p>
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var getQuoteButton = document.getElementById("get-quote-btn");
-            var popupPage = document.getElementById("popup-page");
-            var closeButton = document.querySelector("#popup-content .close button");
+        // Function to open the search bar
+        function openSearchBar() {
+            document.querySelector('header').innerHTML = '<input type="text" id="search-bar" placeholder="AutoBidXchange">';
+            // Add event listener to detect clicks on the document body
+            document.body.addEventListener('click', closeSearchBar);
+        }
 
-            getQuoteButton.addEventListener("click", function() {
-                // Toggle the visibility of the popup page
-                togglePopupPage();
-            });
-
-            closeButton.addEventListener("click", function() {
-                // Close the popup page
-                togglePopupPage();
-            });
-
-            function togglePopupPage() {
-                // Toggle the height of the popup page
-                if (popupPage.clientHeight === 0) {
-                    popupPage.style.height = "50%";
-                } else {
-                    popupPage.style.height = "0";
-                }
+        // Function to close the search bar when clicking outside of it
+        function closeSearchBar(event) {
+            var searchBar = document.getElementById('search-bar');
+            // Check if the clicked element is not the search bar
+            if (event.target !== searchBar && !searchBar.contains(event.target)) {
+                document.querySelector('header').innerHTML = '<span id="search-icon" onclick="openSearchBar()">&#128269;</span><h1>AutoBid<span>X</span>change</h1>';
+                // Remove the event listener to prevent multiple event bindings
+                document.body.removeEventListener('click', closeSearchBar);
             }
-        });
+        }
     </script>
 
 </body>
