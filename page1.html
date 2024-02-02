@@ -11,15 +11,7 @@
             padding: 0;
         }
 
-        #container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f4f4f4;
-            text-align: center;
-        }
-
-        header {
+        .main-header {
             position: sticky;
             top: 0;
             background-color: #c0c0c0; /* Silver background color */
@@ -32,45 +24,65 @@
             align-items: center;
         }
 
-        h1 {
+        .main-header h1 {
             margin: 0;
             font-size: 1.5em;
             flex-grow: 1; /* Allow the name to grow and center align */
         }
 
-        h1 span {
+        .main-header h1 span {
             font-size: 2em; /* Set the font size to be 2 times */
         }
 
-        p {
+        .main-header p {
             color: #666;
             font-size: 0.8em; /* Smaller font size for the additional text */
         }
 
-        /* Style for the search icon button */
         #search-icon {
             font-size: 1.5em;
             cursor: pointer;
             color: #000000; /* Shiny black color */
         }
 
-        /* Style for the search bar */
         #search-bar {
             width: 80%;
-            margin: 0 auto;
+            display: none;
             padding: 10px;
-            font-size: 1em;
-            border: none;
+            margin: 10px;
+            border: 1px solid #ccc;
             border-radius: 5px;
-            outline: none;
+        }
+
+        .secondary-header {
+            background-color: #f4f4f4;
+            padding: 10px;
+            text-align: center;
+            display: none;
+        }
+
+        .secondary-header input {
+            width: 60%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <span id="search-icon" onclick="openSearchBar()">&#128269;</span>
+    <!-- Main Header -->
+    <header class="main-header">
         <h1>AutoBid<span>X</span>change</h1>
+        <span id="search-icon" onclick="toggleSearchBar()">&#128269;</span>
+        <div id="search-bar">
+            <input type="text" placeholder="AutobidXchange">
+        </div>
+    </header>
+
+    <!-- Secondary Header with Search Bar -->
+    <header class="secondary-header">
+        <input type="text" placeholder="Search...">
     </header>
 
     <div id="container">
@@ -78,22 +90,9 @@
     </div>
 
     <script>
-        // Function to open the search bar
-        function openSearchBar() {
-            document.querySelector('header').innerHTML = '<input type="text" id="search-bar" placeholder="AutoBidXchange">';
-            // Add event listener to detect clicks on the document body
-            document.body.addEventListener('click', closeSearchBar);
-        }
-
-        // Function to close the search bar when clicking outside of it
-        function closeSearchBar(event) {
-            var searchBar = document.getElementById('search-bar');
-            // Check if the clicked element is not the search bar
-            if (event.target !== searchBar && !searchBar.contains(event.target)) {
-                document.querySelector('header').innerHTML = '<span id="search-icon" onclick="openSearchBar()">&#128269;</span><h1>AutoBid<span>X</span>change</h1>';
-                // Remove the event listener to prevent multiple event bindings
-                document.body.removeEventListener('click', closeSearchBar);
-            }
+        function toggleSearchBar() {
+            var searchBar = document.querySelector('.secondary-header');
+            searchBar.style.display = (searchBar.style.display === 'none' || searchBar.style.display === '') ? 'block' : 'none';
         }
     </script>
 
