@@ -82,10 +82,22 @@
             padding: 10px;
         }
 
-        .featured-car {
-            width: 100%;
+        .featured-section {
+            width: 100%; /* Ensure it covers the full width of the container */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow around the border */
+            padding: 20px;
             box-sizing: border-box;
             margin-bottom: 20px;
+        }
+
+        .featured-car {
+            width: calc(50% - 20px); /* Adjust as needed to fill up to 50% of the page width */
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow around each featured car */
         }
     </style>
 </head>
@@ -108,51 +120,52 @@
 
     <div id="container">
 
-        <section id="featured-section">
-            <h2>Featured Auctions</h2>
-            <div class="featured-car">
-                <img src="car1.jpeg" alt="Featured Car 1">
-                <p>Car Make Model</p>
-                <p>Current Bid: $X,XXX</p>
-                <a href="auction_detail.html">View Auction</a>
-            </div>
-            
-            <div class="featured-car">
-                <img src="car1.jpeg" alt="Featured Car 1">
-                <p>Car Make Model</p>
-                <p>Current Bid: $X,XXX</p>
-                <a href="auction_detail.html">View Auction</a>
-            </div>
-            
-            <div class="featured-car">
-                <img src="car1.jpeg" alt="Featured Car 1">
-                <p>Car Make Model</p>
-                <p>Current Bid: $X,XXX</p>
-                <a href="auction_detail.html">View Auction</a>
-            </div>
-            
-            <div class="featured-car">
-                <img src="car1.jpeg" alt="Featured Car 1">
-                <p>Car Make Model</p>
-                <p>Current Bid: $X,XXX</p>
-                <a href="auction_detail.html">View Auction</a>
-            </div>
-            
-            <div class="featured-car">
-                <img src="car1.jpeg" alt="Featured Car 1">
-                <p>Car Make Model</p>
-                <p>Current Bid: $X,XXX</p>
-                <a href="auction_detail.html">View Auction</a>
-            </div>
-            
-            <div class="featured-car">
-                <img src="car1.jpeg" alt="Featured Car 1">
-                <p>Car Make Model</p>
-                <p>Current Bid: $X,XXX</p>
-                <a href="auction_detail.html">View Auction</a>
-            </div>
-            <!-- Add more featured-car elements as needed -->
-        </section>
+        <!-- Featured Section Container -->
+        <div class="featured-section">
+
+            <section id="featured-section">
+                <h2>Featured Auctions</h2>
+
+                <!-- Duplicate Featured Cars -->
+                <div class="featured-car">
+                    <img src="car1.jpeg" alt="Featured Car 1">
+                    <p>Car Make Model</p>
+                    <p>Current Bid: $X,XXX</p>
+                    <a href="auction_detail.html">View Auction</a>
+                </div>
+
+                <div class="featured-car">
+                    <img src="car2.jpeg" alt="Featured Car 2">
+                    <p>Car Make Model</p>
+                    <p>Current Bid: $X,XXX</p>
+                    <a href="auction_detail.html">View Auction</a>
+                </div>
+
+                <div class="featured-car">
+                    <img src="car3.jpeg" alt="Featured Car 3">
+                    <p>Car Make Model</p>
+                    <p>Current Bid: $X,XXX</p>
+                    <a href="auction_detail.html">View Auction</a>
+                </div>
+
+                <div class="featured-car">
+                    <img src="car4.jpeg" alt="Featured Car 4">
+                    <p>Car Make Model</p>
+                    <p>Current Bid: $X,XXX</p>
+                    <a href="auction_detail.html">View Auction</a>
+                </div>
+
+                <div class="featured-car">
+                    <img src="car5.jpeg" alt="Featured Car 5">
+                    <p>Car Make Model</p>
+                    <p>Current Bid: $X,XXX</p>
+                    <a href="auction_detail.html">View Auction</a>
+                </div>
+
+                <!-- Add more featured-car elements as needed -->
+            </section>
+
+        </div>
 
     </div>
 
