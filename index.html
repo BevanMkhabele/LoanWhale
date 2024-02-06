@@ -1,60 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Sticky Header</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            transition: background-color 0.5s ease; /* Add transition for background color */
+            transition: background-color 0.5s ease;
+            box-sizing: border-box;
         }
 
         .main-header {
             position: sticky;
             top: 0;
-            background-color: #c0c0c0; /* Silver background color */
-            color: #000000; /* Shiny black text color */
+            background-color: #c0c0c0;
+            color: #000000;
             padding: 10px 20px;
             text-align: center;
             z-index: 100;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: background-color 0.5s ease; /* Add transition for background color */
+            transition: background-color 0.5s ease;
         }
 
         .main-header h1 {
             margin: 0;
             font-size: 1.5em;
-            flex-grow: 1; /* Allow the name to grow and center align */
+            flex-grow: 1;
         }
 
         .main-header h1 span {
-            font-size: 2em; /* Set the font size to be 2 times */
+            font-size: 2em;
         }
 
         .main-header p {
             color: #666;
-            font-size: 0.8em; /* Smaller font size for the additional text */
+            font-size: 0.8em;
         }
 
         #search-icon {
             font-size: 1.5em;
             cursor: pointer;
-            color: #000000; /* Shiny black color */
+            color: #000000;
         }
 
         #search-bar {
-            width: 80%;
+            width: 100%;
             display: none;
             padding: 10px;
             margin: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            transition: display 0.5s ease; /* Add transition for display property */
+            transition: display 0.5s ease;
         }
 
         .secondary-header {
@@ -62,17 +64,32 @@
             padding: 10px;
             text-align: center;
             display: none;
-            transition: display 0.5s ease; /* Add transition for display property */
+            transition: display 0.5s ease;
         }
 
         .secondary-header input {
-            width: 60%;
+            width: 80%;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        #container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 10px;
+        }
+
+        .featured-car {
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 20px;
         }
     </style>
 </head>
+
 <body>
 
     <!-- Main Header -->
@@ -90,63 +107,53 @@
     </header>
 
     <div id="container">
-       
+
         <section id="featured-section">
-    <h2>Featured Auctions</h2>
-    <div class="featured-car">
-        <img src="car1.jpeg" alt="Featured Car 1">
-        <p>Car Make Model</p>
-        <p>Current Bid: $X,XXX</p>
-        <a href="auction_detail.html">View Auction</a>
-    </div>
-    </div>
-    
-     <div id="container">
-       
-        <section id="featured-section">
-    <h2>Featured Auctions</h2>
-    <div class="featured-car">
-        <img src="car1.jpeg" alt="Featured Car 1">
-        <p>Car Make Model</p>
-        <p>Current Bid: $X,XXX</p>
-        <a href="auction_detail.html">View Auction</a>
-    </div>
-    </div>
-    
-     <div id="container">
-       
-        <section id="featured-section">
-    <h2>Featured Auctions</h2>
-    <div class="featured-car">
-        <img src="car1.jpeg" alt="Featured Car 1">
-        <p>Car Make Model</p>
-        <p>Current Bid: $X,XXX</p>
-        <a href="auction_detail.html">View Auction</a>
-    </div>
-    </div>
-    
-     <div id="container">
-       
-        <section id="featured-section">
-    <h2>Featured Auctions</h2>
-    <div class="featured-car">
-        <img src="car1.jpeg" alt="Featured Car 1">
-        <p>Car Make Model</p>
-        <p>Current Bid: $X,XXX</p>
-        <a href="auction_detail.html">View Auction</a>
-    </div>
-    </div>
-    
-     <div id="container">
-       
-        <section id="featured-section">
-    <h2>Featured Auctions</h2>
-    <div class="featured-car">
-        <img src="car1.jpeg" alt="Featured Car 1">
-        <p>Car Make Model</p>
-        <p>Current Bid: $X,XXX</p>
-        <a href="auction_detail.html">View Auction</a>
-    </div>
+            <h2>Featured Auctions</h2>
+            <div class="featured-car">
+                <img src="car1.jpeg" alt="Featured Car 1">
+                <p>Car Make Model</p>
+                <p>Current Bid: $X,XXX</p>
+                <a href="auction_detail.html">View Auction</a>
+            </div>
+            
+            <div class="featured-car">
+                <img src="car1.jpeg" alt="Featured Car 1">
+                <p>Car Make Model</p>
+                <p>Current Bid: $X,XXX</p>
+                <a href="auction_detail.html">View Auction</a>
+            </div>
+            
+            <div class="featured-car">
+                <img src="car1.jpeg" alt="Featured Car 1">
+                <p>Car Make Model</p>
+                <p>Current Bid: $X,XXX</p>
+                <a href="auction_detail.html">View Auction</a>
+            </div>
+            
+            <div class="featured-car">
+                <img src="car1.jpeg" alt="Featured Car 1">
+                <p>Car Make Model</p>
+                <p>Current Bid: $X,XXX</p>
+                <a href="auction_detail.html">View Auction</a>
+            </div>
+            
+            <div class="featured-car">
+                <img src="car1.jpeg" alt="Featured Car 1">
+                <p>Car Make Model</p>
+                <p>Current Bid: $X,XXX</p>
+                <a href="auction_detail.html">View Auction</a>
+            </div>
+            
+            <div class="featured-car">
+                <img src="car1.jpeg" alt="Featured Car 1">
+                <p>Car Make Model</p>
+                <p>Current Bid: $X,XXX</p>
+                <a href="auction_detail.html">View Auction</a>
+            </div>
+            <!-- Add more featured-car elements as needed -->
+        </section>
+
     </div>
 
     <script>
@@ -157,4 +164,5 @@
     </script>
 
 </body>
+
 </html>
