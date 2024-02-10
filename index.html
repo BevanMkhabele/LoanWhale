@@ -120,36 +120,6 @@
         .featured-car a.button:active {
             opacity: 0.7;
         }
-
-        /* Slideshow Modal Styles */
-        .slideshow-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 1000;
-            overflow: auto;
-        }
-
-        .slideshow-modal img {
-            max-width: 90%;
-            max-height: 90%;
-            margin: auto;
-            display: block;
-            border-radius: 5px;
-        }
-
-        .slideshow-modal .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            color: #fff;
-            font-size: 24px;
-            cursor: pointer;
-        }
     </style>
 </head>
 
@@ -178,7 +148,7 @@
                 <h2>Featured Auctions</h2>
 
                 <!-- Modified Featured Car with onclick attribute -->
-                <div class="featured-car" onclick="openSlideshow(['car1.jpeg', 'car2.jpeg', 'car3.jpeg'])">
+                <div class="featured-car" onclick="openPicturesPage()">
                     <img src="car1.jpeg" alt="Featured Car 1">
                     <p>Car Make Model</p>
                     <p>Current Bid: $X,XXX</p>
@@ -192,13 +162,7 @@
 
     </div>
 
-    <!-- Slideshow Modal -->
-    <div class="slideshow-modal" id="slideshowModal">
-        <span class="close-btn" onclick="closeSlideshowModal()">&times;</span>
-        <img src="" id="slideshowImage" alt="Slideshow Image">
-    </div>
-
-    <!-- JavaScript for the slideshow functionality -->
+    <!-- JavaScript for opening the pictures.html page -->
     <script>
         function toggleSearchBar() {
             var searchBar = document.querySelector('.secondary-header');
@@ -220,28 +184,8 @@
             });
         }
 
-        function openSlideshow(images) {
-            var modal = document.getElementById('slideshowModal');
-            var slideshowImage = document.getElementById('slideshowImage');
-
-            // Clear existing images
-            modal.innerHTML = '';
-
-            images.forEach(function (imageUrl) {
-                var img = document.createElement('img');
-                img.src = imageUrl;
-                img.className = 'slideshow-image';
-                img.onclick = function () {
-                    modal.style.display = 'flex';
-                    slideshowImage.src = imageUrl;
-                };
-                modal.appendChild(img);
-            });
-        }
-
-        function closeSlideshowModal() {
-            var modal = document.getElementById('slideshowModal');
-            modal.style.display = 'none';
+        function openPicturesPage() {
+            window.location.href = 'pictures.html';
         }
     </script>
 
