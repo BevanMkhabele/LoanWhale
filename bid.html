@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>View Auction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .auction-header {
+            background-color: #c0c0c0;
+            color: #000000;
+            padding: 10px 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .auction-details {
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .auction-details img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .auction-details p {
+            margin: 0;
+        }
+
+        .bid-section {
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .bid-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        .bid-button {
+            background-color: #000;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Auction Header -->
+    <header class="auction-header">
+        <h1>AutoBid<span>X</span>change</h1>
+    </header>
+
+    <!-- Auction Details -->
+    <div class="auction-details">
+        <img src="car1.jpeg" alt="Car Image">
+        <h2>Car Make Model</h2>
+        <p>Current Bid: $X,XXX</p>
+        <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consectetur mauris vel...</p>
+    </div>
+
+    <!-- Bid Section -->
+    <div class="bid-section">
+        <label for="bidAmount">Enter Your Bid:</label>
+        <input type="text" id="bidAmount" class="bid-input" placeholder="Enter amount">
+        <button class="bid-button" onclick="placeBid()">Place Bid</button>
+    </div>
+
+    <!-- JavaScript for placing bids -->
+    <script>
+        function placeBid() {
+            // Add your logic here to handle bid placement
+            alert('Bid placed successfully!');
+        }
+    </script>
+
+</body>
+
+</html>
