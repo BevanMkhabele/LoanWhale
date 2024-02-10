@@ -21,6 +21,7 @@
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative; /* Relative positioning for absolute arrow buttons */
             overflow: hidden; /* Hide overflowing content for the slideshow effect */
         }
 
@@ -44,38 +45,38 @@
             margin-top: 5px;
             text-align: center;
         }
+
+        /* CSS for arrow buttons */
+        .arrow-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.5);
+            border: none;
+            color: #333;
+            font-size: 20px;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1; /* Ensure arrow buttons appear above images */
+        }
+
+        .arrow-button-left {
+            left: 10px;
+        }
+
+        .arrow-button-right {
+            right: 10px;
+        }
     </style>
 </head>
 
 <body>
     <div class="cloud">
+        <button class="arrow-button arrow-button-left" onclick="prevSlide()">&#10094;</button>
+        <button class="arrow-button arrow-button-right" onclick="nextSlide()">&#10095;</button>
         <h1>Cloud Gallery</h1>
         <div class="image-container">
             <div class="image-item">
-                <img class="image" src="image1.jpg" alt="Image 1">
-                <div class="image-name">Image 1</div>
-            </div>
-            <div class="image-item">
-                <img class="image" src="image2.jpg" alt="Image 2">
-                <div class="image-name">Image 2</div>
-            </div>
-            <div class="image-item">
-                <img class="image" src="image3.jpg" alt="Image 3">
-                <div class="image-name">Image 3</div>
-            </div>
-             <div class="image-item">
-                <img class="image" src="image1.jpg" alt="Image 1">
-                <div class="image-name">Image 1</div>
-            </div>
-            <div class="image-item">
-                <img class="image" src="image2.jpg" alt="Image 2">
-                <div class="image-name">Image 2</div>
-            </div>
-            <div class="image-item">
-                <img class="image" src="image3.jpg" alt="Image 3">
-                <div class="image-name">Image 3</div>
-            </div>
-             <div class="image-item">
                 <img class="image" src="image1.jpg" alt="Image 1">
                 <div class="image-name">Image 1</div>
             </div>
@@ -96,11 +97,12 @@
         var imageContainer = document.querySelector('.image-container');
 
         function nextSlide() {
-            imageContainer.style.transform = 'translateX(-120%)'; // Adjust the translation value as needed
+            imageContainer.style.transform = 'translateX(-33.33%)'; // Slide one image width to the left
         }
 
-        // Trigger the next slide after a delay (e.g., 2 seconds)
-        setInterval(nextSlide, 2000);
+        function prevSlide() {
+            imageContainer.style.transform = 'translateX(0)'; // Slide back to the original position
+        }
     </script>
 </body>
 
