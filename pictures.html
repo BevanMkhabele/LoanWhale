@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
             padding: 0;
             background-color: #f0f0f0;
         }
+
         .cloud {
             max-width: 800px;
             margin: 20px auto;
@@ -19,26 +21,32 @@
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden; /* Hide overflowing content for the slideshow effect */
         }
+
         .image-container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+            transition: transform 0.5s ease; /* Animation for the slideshow effect */
         }
+
         .image-item {
-            width: calc(33.33% - 20px);
-            margin-bottom: 20px;
+            flex: 0 0 100%;
+            margin-right: 20px;
+            box-sizing: border-box;
         }
+
         .image {
             width: 100%;
             border-radius: 5px;
         }
+
         .image-name {
             margin-top: 5px;
             text-align: center;
         }
     </style>
 </head>
+
 <body>
     <div class="cloud">
         <h1>Cloud Gallery</h1>
@@ -55,7 +63,7 @@
                 <img class="image" src="image3.jpg" alt="Image 3">
                 <div class="image-name">Image 3</div>
             </div>
-              <div class="image-item">
+             <div class="image-item">
                 <img class="image" src="image1.jpg" alt="Image 1">
                 <div class="image-name">Image 1</div>
             </div>
@@ -67,7 +75,7 @@
                 <img class="image" src="image3.jpg" alt="Image 3">
                 <div class="image-name">Image 3</div>
             </div>
-              <div class="image-item">
+             <div class="image-item">
                 <img class="image" src="image1.jpg" alt="Image 1">
                 <div class="image-name">Image 1</div>
             </div>
@@ -82,5 +90,18 @@
             <!-- Add more image items as needed -->
         </div>
     </div>
+
+    <script>
+        // JavaScript for the slideshow effect
+        var imageContainer = document.querySelector('.image-container');
+
+        function nextSlide() {
+            imageContainer.style.transform = 'translateX(-120%)'; // Adjust the translation value as needed
+        }
+
+        // Trigger the next slide after a delay (e.g., 2 seconds)
+        setInterval(nextSlide, 2000);
+    </script>
 </body>
+
 </html>
