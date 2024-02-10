@@ -148,11 +148,11 @@
                 <h2>Featured Auctions</h2>
 
                 <!-- Modified Featured Car with onclick attribute -->
-                <div class="featured-car" onclick="openPicturesPage()">
+                <div class="featured-car" onclick="openBidPage()">
                     <img src="car1.jpeg" alt="Featured Car 1">
                     <p>Car Make Model</p>
                     <p>Current Bid: $X,XXX</p>
-                    <a href="auction_detail.html" class="button">View Auction</a>
+                    <a href="bid.html" class="button">View Auction</a>
                 </div>
 
                 <!-- Add more featured-car elements as needed with the onclick attribute -->
@@ -162,7 +162,7 @@
 
     </div>
 
-    <!-- JavaScript for opening the pictures.html page and storing image URLs in localStorage -->
+    <!-- JavaScript for opening the bid.html page -->
     <script>
         function toggleSearchBar() {
             var searchBar = document.querySelector('.secondary-header');
@@ -184,13 +184,8 @@
             });
         }
 
-        function openPicturesPage() {
-            // Store image URLs in localStorage
-            var imageUrls = ['car1.jpeg', 'car2.jpeg', 'car3.jpeg', 'car4.jpeg', 'car5.jpeg'];
-            localStorage.setItem('imageUrls', JSON.stringify(imageUrls));
-
-            // Open pictures.html page
-            window.location.href = 'pictures.html';
+        function openBidPage() {
+            // Add any specific logic for opening bid.html, if needed
         }
     </script>
 
