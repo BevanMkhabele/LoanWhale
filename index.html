@@ -120,6 +120,12 @@
         .featured-car a.button:active {
             opacity: 0.7;
         }
+
+        .featured-car a.link {
+            display: block;
+            text-decoration: none;
+            color: #000;
+        }
     </style>
 </head>
 
@@ -144,127 +150,29 @@
         <!-- Featured Section Container -->
         <div class="featured-section">
 
-            <section id="featured-section">
+            <section>
                 <h2>Featured Auctions</h2>
 
                 <!-- Modified Featured Car with onclick attribute -->
-                <div class="featured-car" onclick="openBidPage()">
-                    <img src="car1.jpeg" alt="Featured Car 1">
-                    <p>Car Make Model</p>
+                <div class="featured-car">
+                    <a href="pictures.html" class="link">
+                        <img src="car1.jpeg" alt="Featured Car 1">
+                        <p>Car Make Model</p>
+                    </a>
                     <p>Current Bid: $X,XXX</p>
-                    <a href="bid.html" class="button" id="viewAuctionBtn">View Auction</a>
+                    <a href="bid.html" class="button">View Auction</a>
                 </div>
 
                 <!-- Add more featured-car elements as needed with the onclick attribute -->
             </section>
 
         </div>
-         <div class="featured-section">
 
-            <section id="featured-section">
-                <h2>Featured Auctions</h2>
-
-                <!-- Modified Featured Car with onclick attribute -->
-                <div class="featured-car" onclick="openBidPage()">
-                    <img src="car1.jpeg" alt="Featured Car 1">
-                    <p>Car Make Model</p>
-                    <p>Current Bid: $X,XXX</p>
-                    <a href="bid.html" class="button" id="viewAuctionBtn">View Auction</a>
-                </div>
-
-                <!-- Add more featured-car elements as needed with the onclick attribute -->
-            </section>
-
-        </div>
-         <div class="featured-section">
-
-            <section id="featured-section">
-                <h2>Featured Auctions</h2>
-
-                <!-- Modified Featured Car with onclick attribute -->
-                <div class="featured-car" onclick="openBidPage()">
-                    <img src="car1.jpeg" alt="Featured Car 1">
-                    <p>Car Make Model</p>
-                    <p>Current Bid: $X,XXX</p>
-                    <a href="bid.html" class="button" id="viewAuctionBtn">View Auction</a>
-                </div>
-
-                <!-- Add more featured-car elements as needed with the onclick attribute -->
-            </section>
-
-        </div>
-         <div class="featured-section">
-
-            <section id="featured-section">
-                <h2>Featured Auctions</h2>
-
-                <!-- Modified Featured Car with onclick attribute -->
-                <div class="featured-car" onclick="openBidPage()">
-                    <img src="car1.jpeg" alt="Featured Car 1">
-                    <p>Car Make Model</p>
-                    <p>Current Bid: $X,XXX</p>
-                    <a href="bid.html" class="button" id="viewAuctionBtn">View Auction</a>
-                </div>
-
-                <!-- Add more featured-car elements as needed with the onclick attribute -->
-            </section>
-
-        </div>
-         <div class="featured-section">
-
-            <section id="featured-section">
-                <h2>Featured Auctions</h2>
-
-                <!-- Modified Featured Car with onclick attribute -->
-                <div class="featured-car" onclick="openBidPage()">
-                    <img src="car1.jpeg" alt="Featured Car 1">
-                    <p>Car Make Model</p>
-                    <p>Current Bid: $X,XXX</p>
-                    <a href="bid.html" class="button" id="viewAuctionBtn">View Auction</a>
-                </div>
-
-                <!-- Add more featured-car elements as needed with the onclick attribute -->
-            </section>
-
-        </div>
-         <div class="featured-section">
-
-            <section id="featured-section">
-                <h2>Featured Auctions</h2>
-
-                <!-- Modified Featured Car with onclick attribute -->
-                <div class="featured-car" onclick="openBidPage()">
-                    <img src="car1.jpeg" alt="Featured Car 1">
-                    <p>Car Make Model</p>
-                    <p>Current Bid: $X,XXX</p>
-                    <a href="bid.html" class="button" id="viewAuctionBtn">View Auction</a>
-                </div>
-
-                <!-- Add more featured-car elements as needed with the onclick attribute -->
-            </section>
-
-        </div>
-         <div class="featured-section">
-
-            <section id="featured-section">
-                <h2>Featured Auctions</h2>
-
-                <!-- Modified Featured Car with onclick attribute -->
-                <div class="featured-car" onclick="openBidPage()">
-                    <img src="car1.jpeg" alt="Featured Car 1">
-                    <p>Car Make Model</p>
-                    <p>Current Bid: $X,XXX</p>
-                    <a href="bid.html" class="button" id="viewAuctionBtn">View Auction</a>
-                </div>
-
-                <!-- Add more featured-car elements as needed with the onclick attribute -->
-            </section>
-
-        </div>
+        <!-- Add more featured-section elements with different images and onclick attributes -->
 
     </div>
 
-    <!-- JavaScript for opening the bid.html page -->
+    <!-- JavaScript for opening the bid.html page with a specific image -->
     <script>
         function toggleSearchBar() {
             var searchBar = document.querySelector('.secondary-header');
@@ -284,11 +192,6 @@
                     car.style.display = 'none';
                 }
             });
-        }
-
-        function openBidPage() {
-            // Directly open bid.html when the button is clicked
-            window.location.href = 'bid.html';
         }
     </script>
 
