@@ -152,7 +152,7 @@
                     <img src="car1.jpeg" alt="Featured Car 1">
                     <p>Car Make Model</p>
                     <p>Current Bid: $X,XXX</p>
-                    <a href="bid.html" class="button">View Auction</a>
+                    <a href="bid.html" class="button" id="viewAuctionBtn">View Auction</a>
                 </div>
 
                 <!-- Add more featured-car elements as needed with the onclick attribute -->
@@ -185,7 +185,8 @@
         }
 
         function openBidPage() {
-            // Add any specific logic for opening bid.html, if needed
+            // Directly open bid.html when the button is clicked
+            window.location.href = 'bid.html';
         }
     </script>
 
