@@ -60,6 +60,7 @@
         .toggle-form a {
             color: #007BFF;
             text-decoration: none;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -79,7 +80,7 @@
         </form>
 
         <div class="toggle-form">
-            <p>Don't have an account? <a href="#" onclick="openSignupPopup()">Sign Up</a></p>
+            <p>Don't have an account? <a href="signup.html" target="_blank">Sign Up</a></p>
         </div>
     </div>
 
@@ -87,11 +88,6 @@
         function login() {
             // Add login logic here
             alert('Login clicked!');
-        }
-
-        function openSignupPopup() {
-            alert('Signup link clicked! Open signup.html as a popup.');
-            // You can replace the alert with actual popup logic using window.open or other methods.
         }
     </script>
 
