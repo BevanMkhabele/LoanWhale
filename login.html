@@ -79,7 +79,7 @@
         </form>
 
         <div class="toggle-form">
-            <p>Don't have an account? <a href="#" onclick="toggleForm()">Sign Up</a></p>
+            <p>Don't have an account? <a href="#" onclick="openSignupPopup()">Sign Up</a></p>
         </div>
     </div>
 
@@ -89,10 +89,9 @@
             alert('Login clicked!');
         }
 
-        function toggleForm() {
-            var loginForm = document.getElementById('loginForm');
-            loginForm.reset();
-            alert('Toggle form clicked!');
+        function openSignupPopup() {
+            alert('Signup link clicked! Open signup.html as a popup.');
+            // You can replace the alert with actual popup logic using window.open or other methods.
         }
     </script>
 
