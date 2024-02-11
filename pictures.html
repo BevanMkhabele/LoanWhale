@@ -72,20 +72,20 @@
 
 <body>
     <div class="cloud">
-        <button class="arrow-button arrow-button-left" onclick="prevSlide()">&#10094;</button>
-        <button class="arrow-button arrow-button-right" onclick="nextSlide()">&#10095;</button>
+        <button class="arrow-button arrow-button-left" onclick="prevSlide()" aria-label="Previous">&#10094;</button>
+        <button class="arrow-button arrow-button-right" onclick="nextSlide()" aria-label="Next">&#10095;</button>
         <h1>Cloud Gallery</h1>
         <div class="image-container">
             <div class="image-item">
-                <img class="image" src="car1.jpeg" alt="Image 1">
+                <img class="image" src="image1.jpg" alt="Image 1">
                 <div class="image-name">Image 1</div>
             </div>
             <div class="image-item">
-                <img class="image" src="car1.jpeg" alt="Image 2">
+                <img class="image" src="image2.jpg" alt="Image 2">
                 <div class="image-name">Image 2</div>
             </div>
             <div class="image-item">
-                <img class="image" src="car1.jpeg" alt="Image 3">
+                <img class="image" src="image3.jpg" alt="Image 3">
                 <div class="image-name">Image 3</div>
             </div>
             <!-- Add more image items as needed -->
@@ -94,15 +94,31 @@
 
     <script>
         // JavaScript for the slideshow effect
+        var currentIndex = 0;
+        var totalImages = document.querySelectorAll('.image-item').length;
         var imageContainer = document.querySelector('.image-container');
 
         function nextSlide() {
-            imageContainer.style.transform = 'translateX(-33.33%)'; // Slide one image width to the left
+            if (currentIndex < totalImages - 1) {
+                currentIndex++;
+                updateSlide();
+            }
         }
 
         function prevSlide() {
-            imageContainer.style.transform = 'translateX(0)'; // Slide back to the original position
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateSlide();
+            }
         }
+
+        function updateSlide() {
+            var slideWidth = currentIndex * -100;
+            imageContainer.style.transform = 'translateX(' + slideWidth + '%)';
+        }
+
+        // Ensure the initial state is set
+        updateSlide();
     </script>
 </body>
 
