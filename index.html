@@ -87,11 +87,25 @@
         }
 
         .featured-section {
+            position: relative;
             width: 100%;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 20px;
             box-sizing: border-box;
             margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .featured-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.8); /* Adjust the alpha value for the desired blur effect */
+            backdrop-filter: blur(10px); /* Adjust the blur value */
+            z-index: -1;
         }
 
         .featured-car {
