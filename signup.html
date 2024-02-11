@@ -60,6 +60,7 @@
         .toggle-form a {
             color: #007BFF;
             text-decoration: none;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -82,7 +83,7 @@
         </form>
 
         <div class="toggle-form">
-            <p>Already have an account? <a href="#" onclick="toggleForm()">Login</a></p>
+            <p>Already have an account? <a href="login.html">Login</a></p>
         </div>
     </div>
 
@@ -90,12 +91,6 @@
         function signup() {
             // Add signup logic here
             alert('Sign Up clicked!');
-        }
-
-        function toggleForm() {
-            var signupForm = document.getElementById('signupForm');
-            signupForm.reset();
-            alert('Toggle form clicked!');
         }
     </script>
 
