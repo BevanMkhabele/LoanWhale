@@ -55,33 +55,20 @@
 
         #search-bar {
             width: 100%;
-            height: 0;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            padding: 0 10px;
+            display: none;
+            padding: 10px;
             margin: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            transition: height 0.3s ease;
-        }
-
-        #search-bar input {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-bottom: 1px solid #ccc;
-            margin-bottom: 10px;
-            box-sizing: border-box;
+            transition: display 0.5s ease;
         }
 
         .secondary-header {
             background-color: #f4f4f4;
             padding: 10px;
             text-align: center;
-            height: 0;
-            overflow: hidden;
-            transition: height 0.3s ease;
+            display: none;
+            transition: display 0.5s ease;
         }
 
         .secondary-header input {
@@ -107,10 +94,20 @@
             box-sizing: border-box;
             margin-bottom: 20px;
             overflow: hidden;
-            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%), url('ad.png');
-            background-size: cover;
-            background-position: center top;
-            backdrop-filter: blur(90%); /* Adjust the blur value */
+            /* Apply background blur effect */
+            position: relative;
+        }
+
+        .featured-section::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.9); /* Adjust the alpha value for the desired blur effect */
+            backdrop-filter: blur(10px); /* Adjust the blur value */
+            z-index: -1;
         }
 
         .featured-car {
@@ -128,11 +125,6 @@
             width: 100%;
             height: auto;
             border-radius: 5px;
-        }
-
-        .featured-car p {
-            font-size: 17px;
-            font-weight: bold;
         }
 
         .featured-car a.button {
@@ -153,6 +145,11 @@
             display: block;
             text-decoration: none;
             color: #000;
+        }
+
+        .featured-car p {
+            font-size: 17px;
+            font-weight: bold;
         }
 
         .featured-car strong {
@@ -198,9 +195,9 @@
                 <div class="featured-car">
                     <a href="login.html" class="link">
                         <img src="NissanAlmera.png" alt="Featured Car 2">
-                        <p>2014 Nissan Almera 1.5 Sedan For Sale</p>
+                        <p>2024 Nissan Almera 1.5 Auto In Auction</p>
                     </a>
-                    <p><strong>Current Bid:</strong> R150,000.00</p>
+                    <p><strong>Current Bid:</strong> R200,000.00</p>
                     <a href="login.html" class="button">View Auction</a>
                 </div>
                 <div class="featured-car">
@@ -208,15 +205,15 @@
                         <img src="polo.png" alt="Featured Car 3">
                         <p>2013 Volkswagen Cross Polo 1.6TDI Comfortline In Auction</p>
                     </a>
-                    <p><strong>Current Bid:</strong> R180,000.00</p>
+                    <p><strong>Current Bid:</strong> R200,000.00</p>
                     <a href="login.html" class="button">View Auction</a>
                 </div>
                 <div class="featured-car">
                     <a href="login.html" class="link">
                         <img src="hilux.png" alt="Featured Car 4">
-                        <p>2023 Toyota Hilux 2.8GD-6 Double Cab 4x4 GR-Sport In Auction</p>
+                        <p>2023 Toyota Hilux 2.8GD-6 Double Cab 4x4 GR-Sport / In Auction</p>
                     </a>
-                    <p><strong>Current Bid:</strong> R230,000.00</p>
+                    <p><strong>Current Bid:</strong> R200,000.00</p>
                     <a href="login.html" class="button">View Auction</a>
                 </div>
                 <div class="featured-car">
@@ -224,7 +221,7 @@
                         <img src="bmw.png" alt="Featured Car 5">
                         <p>2016 BMW 3 Series 320i auto Under Negotiation</p>
                     </a>
-                    <p><strong>Current Bid:</strong> Under Negotiation</p>
+                    <p><strong>Current Bid:</strong> R200,000.00</p>
                     <a href="login.html" class="button">View Auction</a>
                 </div>
                 <!-- Add more featured-car elements as needed with the onclick attribute -->
@@ -239,18 +236,8 @@
     <!-- JavaScript for opening the login.html page in the same window -->
     <script>
         function toggleSearchBar() {
-            var searchBar = document.querySelector('#search-bar');
-            var searchContainer = document.querySelector('.featured-section');
-            if (searchBar.style.height === '0px' || searchBar.style.height === '') {
-                searchBar.style.height = 'auto';
-                searchContainer.style.backdropFilter = 'blur(10px)'; /* Adjust the blur value */
-            } else {
-                searchBar.style.height = '0';
-                searchContainer.style.backdropFilter = 'blur(90%)'; /* Adjust the blur value */
-                setTimeout(function () {
-                    searchBar.style.height = '0';
-                }, 300); // Match the transition duration
-            }
+            var searchBar = document.querySelector('.secondary-header');
+            searchBar.style.display = (searchBar.style.display === 'none' || searchBar.style.display === '') ? 'block' : 'none';
         }
 
         function searchCars(query) {
