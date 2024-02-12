@@ -94,20 +94,10 @@
             box-sizing: border-box;
             margin-bottom: 20px;
             overflow: hidden;
-            /* Apply background blur effect */
-            position: relative;
-        }
-
-        .featured-section::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(255, 255, 255, 0.9); /* Adjust the alpha value for the desired blur effect */
-            backdrop-filter: blur(10px); /* Adjust the blur value */
-            z-index: -1;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%), url('ad.png');
+            background-size: cover;
+            background-position: center top;
+            backdrop-filter: blur(90%); /* Adjust the blur value */
         }
 
         .featured-car {
@@ -125,6 +115,11 @@
             width: 100%;
             height: auto;
             border-radius: 5px;
+        }
+
+        .featured-car p {
+            font-size: 17px;
+            font-weight: bold;
         }
 
         .featured-car a.button {
@@ -145,11 +140,6 @@
             display: block;
             text-decoration: none;
             color: #000;
-        }
-
-        .featured-car p {
-            font-size: 17px;
-            font-weight: bold;
         }
 
         .featured-car strong {
@@ -195,9 +185,9 @@
                 <div class="featured-car">
                     <a href="login.html" class="link">
                         <img src="NissanAlmera.png" alt="Featured Car 2">
-                        <p>2024 Nissan Almera 1.5 Auto In Auction</p>
+                        <p>2014 Nissan Almera 1.5 Sedan For Sale</p>
                     </a>
-                    <p><strong>Current Bid:</strong> R200,000.00</p>
+                    <p><strong>Current Bid:</strong> R150,000.00</p>
                     <a href="login.html" class="button">View Auction</a>
                 </div>
                 <div class="featured-car">
@@ -205,15 +195,15 @@
                         <img src="polo.png" alt="Featured Car 3">
                         <p>2013 Volkswagen Cross Polo 1.6TDI Comfortline In Auction</p>
                     </a>
-                    <p><strong>Current Bid:</strong> R200,000.00</p>
+                    <p><strong>Current Bid:</strong> R180,000.00</p>
                     <a href="login.html" class="button">View Auction</a>
                 </div>
                 <div class="featured-car">
                     <a href="login.html" class="link">
                         <img src="hilux.png" alt="Featured Car 4">
-                        <p>2023 Toyota Hilux 2.8GD-6 Double Cab 4x4 GR-Sport / In Auction</p>
+                        <p>2023 Toyota Hilux 2.8GD-6 Double Cab 4x4 GR-Sport In Auction</p>
                     </a>
-                    <p><strong>Current Bid:</strong> R200,000.00</p>
+                    <p><strong>Current Bid:</strong> R250,000.00</p>
                     <a href="login.html" class="button">View Auction</a>
                 </div>
                 <div class="featured-car">
@@ -221,7 +211,7 @@
                         <img src="bmw.png" alt="Featured Car 5">
                         <p>2016 BMW 3 Series 320i auto Under Negotiation</p>
                     </a>
-                    <p><strong>Current Bid:</strong> R200,000.00</p>
+                    <p><strong>Current Bid:</strong> Under Negotiation</p>
                     <a href="login.html" class="button">View Auction</a>
                 </div>
                 <!-- Add more featured-car elements as needed with the onclick attribute -->
@@ -253,6 +243,31 @@
                     car.style.display = 'none';
                 }
             });
+        }
+
+        // Event listener for touchmove to close the search bar on upward swipe
+        var startY;
+        var isSwipingUp = false;
+
+        document.addEventListener('touchstart', function (e) {
+            startY = e.touches[0].clientY;
+            isSwipingUp = false;
+        });
+
+        document.addEventListener('touchmove', function (e) {
+            if (!startY) return;
+
+            var deltaY = e.touches[0].clientY - startY;
+
+            if (deltaY < -50 && !isSwipingUp) {
+                closeSearchBar();
+                isSwipingUp = true;
+            }
+        });
+
+        function closeSearchBar() {
+            var searchBar = document.querySelector('.secondary-header');
+            searchBar.style.display = 'none';
         }
     </script>
 
