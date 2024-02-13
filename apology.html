@@ -40,6 +40,12 @@
             text-decoration: none;
             color: #007bff;
             font-weight: bold;
+            display: inline-block; /* Ensures the image and text are in the same line */
+        }
+
+        a img {
+            vertical-align: middle; /* Aligns the image vertically in the middle */
+            margin-right: 5px; /* Adds a small margin between the image and text */
         }
 
         a:hover {
@@ -53,7 +59,10 @@
     <div class="container">
         <h1>We Apologize for the Inconvenience</h1>
         <p>Our services are temporarily unavailable. Please feel free to reach out to us via WhatsApp for any assistance.</p>
-        <a href="https://wa.me/1234567890" target="_blank">Text Us on WhatsApp</a>
+        <a href="https://wa.me/1234567890" target="_blank">
+            <img src="your-image-url.jpg" alt="WhatsApp Icon" width="20" height="20">
+            Text Us on WhatsApp
+        </a>
     </div>
 
 </body>
