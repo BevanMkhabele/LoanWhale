@@ -12,10 +12,10 @@
             padding: 0;
             transition: background-color 0.5s ease;
             box-sizing: border-box;
-            background-image: url('ad.png'); /* Add the background image */
+            background-image: url('ad.png');
             background-size: cover;
             background-position: center top;
-            height: 50vh; /* Set the height to 50% of the viewport height */
+            height: 50vh;
         }
 
         .main-header {
@@ -28,7 +28,7 @@
             z-index: 100;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: center; /* Vertically center the child elements */
             transition: background-color 0.5s ease;
         }
 
@@ -79,6 +79,65 @@
             box-sizing: border-box;
         }
 
+        .side-nav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+            padding-top: 20px;
+            transition: 0.5s;
+        }
+
+        .side-nav a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #000;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .side-nav a:hover {
+            background-color: #ddd;
+        }
+
+        .toggle-btn {
+            display: block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #000;
+            cursor: pointer;
+            background-color: #ddd;
+            border: none;
+            transition: 0.3s;
+        }
+
+        .toggle-btn:hover {
+            background-color: #ccc;
+        }
+
+        #toggle-nav-btn {
+            display: block;
+            font-size: 24px;
+            background-color: transparent;
+            color: #000;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            opacity: 0.7;
+            padding: 8px;
+        }
+
+        #toggle-nav-btn:hover {
+            opacity: 1;
+        }
+
         #container {
             display: flex;
             flex-wrap: wrap;
@@ -94,7 +153,6 @@
             box-sizing: border-box;
             margin-bottom: 20px;
             overflow: hidden;
-            /* Apply background blur effect */
             position: relative;
         }
 
@@ -105,8 +163,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(255, 255, 255, 0.9); /* Adjust the alpha value for the desired blur effect */
-            backdrop-filter: blur(10px); /* Adjust the blur value */
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
             z-index: -1;
         }
 
@@ -154,15 +212,31 @@
 
         .featured-car strong {
             font-weight: bold;
-            color: limegreen; /* Make the "Current Bid" text lime green */
+            color: limegreen;
         }
     </style>
 </head>
 
 <body>
 
+    <!-- Side Navigation Bar -->
+    <nav class="side-nav">
+        <button id="toggle-nav-btn" onclick="toggleSideNav()">&#9776;</button>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#featured-deals">Featured Deals</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#auction-calendar">Auction Calendar</a></li>
+            <li><a href="#vehicle-listings">Vehicle Listings</a></li>
+            <li><a href="#exclusive-deals">Exclusive Deals</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
     <!-- Main Header -->
     <header class="main-header">
+        <button id="toggle-nav-btn" class="toggle-btn" onclick="toggleSideNav()">&#9776;</button>
         <h1>AutoBid<span>X</span>change</h1>
         <span id="search-icon" onclick="toggleSearchBar()">&#128269;</span>
         <div id="search-bar">
@@ -183,7 +257,7 @@
             <section>
                 <h2>Featured Auctions</h2>
 
-                <!-- Modified Featured Car with onclick attribute -->
+                <!-- Featured Car 1 -->
                 <div class="featured-car">
                     <a href="login.html" class="link">
                         <img src="kia1.png" alt="Featured Car 1">
@@ -192,6 +266,8 @@
                     <p><strong>Current Bid:</strong> R200,000.00</p>
                     <a href="login.html" class="button">View Auction</a>
                 </div>
+
+                <!-- Featured Car 2 -->
                 <div class="featured-car">
                     <a href="login.html" class="link">
                         <img src="NissanAlmera.png" alt="Featured Car 2">
@@ -200,6 +276,8 @@
                     <p><strong>Current Bid:</strong> R200,000.00</p>
                     <a href="login.html" class="button">View Auction</a>
                 </div>
+
+                <!-- Featured Car 3 -->
                 <div class="featured-car">
                     <a href="login.html" class="link">
                         <img src="polo.png" alt="Featured Car 3">
@@ -208,6 +286,8 @@
                     <p><strong>Current Bid:</strong> R200,000.00</p>
                     <a href="login.html" class="button">View Auction</a>
                 </div>
+
+                <!-- Featured Car 4 -->
                 <div class="featured-car">
                     <a href="login.html" class="link">
                         <img src="hilux.png" alt="Featured Car 4">
@@ -216,6 +296,8 @@
                     <p><strong>Current Bid:</strong> R200,000.00</p>
                     <a href="login.html" class="button">View Auction</a>
                 </div>
+
+                <!-- Featured Car 5 -->
                 <div class="featured-car">
                     <a href="login.html" class="link">
                         <img src="bmw.png" alt="Featured Car 5">
@@ -224,6 +306,7 @@
                     <p><strong>Current Bid:</strong> R200,000.00</p>
                     <a href="login.html" class="button">View Auction</a>
                 </div>
+
                 <!-- Add more featured-car elements as needed with the onclick attribute -->
             </section>
 
@@ -254,8 +337,21 @@
                 }
             });
         }
-    </script>
 
+        function toggleSideNav() {
+            var sideNav = document.querySelector('.side-nav');
+            var toggleBtn = document.getElementById('toggle-nav-btn');
+
+            if (sideNav.style.width === '250px' || sideNav.style.width === '') {
+                sideNav.style.width = '0';
+                toggleBtn.textContent = '\u2630'; // Unicode for hamburger icon
+            } else {
+                sideNav.style.width = '250px';
+                toggleBtn.textContent = 'Close';
+            }
+        }
+    </script>
 </body>
 
 </html>
+
